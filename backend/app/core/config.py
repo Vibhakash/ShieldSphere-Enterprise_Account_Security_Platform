@@ -57,6 +57,10 @@ class Settings(BaseSettings):
 
     # GeoIP
     GEOLITE2_DB_PATH: str = str(BACKEND_DIR / "data" / "GeoLite2-City.mmdb")
+    # Optional MaxMind GeoLite web-service credentials. These provide a
+    # deployment-safe fallback when the licensed MMDB file is not packaged.
+    MAXMIND_ACCOUNT_ID: str = ""
+    MAXMIND_LICENSE_KEY: str = ""
 
     @field_validator("GEOLITE2_DB_PATH", mode="after")
     @classmethod
