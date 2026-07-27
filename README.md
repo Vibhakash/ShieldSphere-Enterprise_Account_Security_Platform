@@ -238,10 +238,6 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 
 ### 🧠 Intelligence & Assessment
 
-<div align="center">
-<img src="docs/assets/shieldsphere-security-assessment.png" alt="Security Assessment Tools — Password Breach, URL Phishing, IP Reputation" width="100%" style="max-height:320px; object-fit:cover;" />
-</div>
-
 <br>
 
 - 🤖 **AI Security Copilot** — Streams grounded SSE responses from Groq using user's real context (threats, alerts, score, sessions, devices)
@@ -296,12 +292,6 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 ---
 
 ## 🏗 System Architecture
-
-<div align="center">
-
-<img src="docs/assets/shieldsphere-architecture-ai.png" alt="ShieldSphere System Architecture — React+Vite → FastAPI → PostgreSQL, Redis, AI Engine, Docker Sandbox, GeoIP, Integrations" width="100%" style="max-height:400px; object-fit:cover;" />
-
-</div>
 
 ### 🧩 Core Components
 
@@ -362,13 +352,7 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 
 ---
 
-## 🔄 Security Workflow & API Lifecycle
-
-### Security Event Flow
-
-<div align="center">
-<img src="docs/assets/shieldsphere-security-event-flow.png" alt="Security Event Flow — User Device → ShieldSphere API → Detection Engine → Threat Alert → Response" width="100%" />
-</div>
+## 🔄 API Lifecycle
 
 ### API Request Lifecycle
 
