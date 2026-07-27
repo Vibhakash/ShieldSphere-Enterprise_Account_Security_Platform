@@ -76,6 +76,9 @@ class Settings(BaseSettings):
     ALLOWED_HOSTS: str = "localhost,127.0.0.1"
     API_DOCS_ENABLED: bool = True
     COOKIE_SECURE: bool = False
+    # "none" is required when the browser app and API are on different sites
+    # (for example Vercel and Render). It must always be paired with HTTPS.
+    COOKIE_SAMESITE: str = "lax"
     # Only these direct peers may supply X-Forwarded-For. Configure the
     # reverse proxy's address/network in production.
     TRUSTED_PROXY_NETWORKS: str = "127.0.0.1/32,::1/128"
@@ -123,6 +126,8 @@ class Settings(BaseSettings):
             errors.append("JWT_SECRET and JWT_REFRESH_SECRET must be different")
         if not self.COOKIE_SECURE:
             errors.append("COOKIE_SECURE must be true")
+        if self.COOKIE_SAMESITE.lower() not in {"lax", "strict", "none"}:
+            errors.append("COOKIE_SAMESITE must be one of: lax, strict, none")
 
         origins = self.cors_origins_list
         if not origins or any(

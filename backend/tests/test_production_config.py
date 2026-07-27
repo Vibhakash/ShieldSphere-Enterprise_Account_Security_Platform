@@ -64,10 +64,11 @@ def test_refresh_request_allows_http_only_cookie_flow():
 
 def test_authentication_cookies_are_secure_in_production_mode(monkeypatch):
     monkeypatch.setattr(settings, "COOKIE_SECURE", True)
+    monkeypatch.setattr(settings, "COOKIE_SAMESITE", "none")
     response = Response()
     _set_auth_cookies(response, "access", "refresh")
     cookies = response.headers.getlist("set-cookie")
     assert len(cookies) == 2
     assert all("HttpOnly" in cookie for cookie in cookies)
     assert all("Secure" in cookie for cookie in cookies)
-    assert all("SameSite=lax" in cookie for cookie in cookies)
+    assert all("SameSite=none" in cookie for cookie in cookies)
