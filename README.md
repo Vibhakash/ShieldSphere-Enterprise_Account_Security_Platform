@@ -1,246 +1,566 @@
 <div align="center">
 
-# 🛡️ ShieldSphere
+<!-- ╔══════════════════════════════════════════════════════════════╗ -->
+<!--        SHIELDSPHERE — ENTERPRISE ACCOUNT SECURITY PLATFORM       -->
+<!-- ╚══════════════════════════════════════════════════════════════╝ -->
 
-### Enterprise Account Security Platform
+<img src="docs/assets/shieldsphere-system-architecture.png" alt="ShieldSphere — Enterprise Account Security Platform" width="100%" />
 
-<img src="docs/assets/shieldsphere-taglines.svg" alt="Secure Every Identity. Monitor Every Threat. Protect Every Enterprise. The Security Layer Every Application Deserves." width="100%" />
-
-<img src="docs/assets/shieldsphere-system-architecture.png" alt="ShieldSphere system architecture illustration" width="100%" />
-
-<p>
-  <img src="https://img.shields.io/badge/Frontend-React%20%2B%20Vite-38BDF8?style=for-the-badge&logo=react&logoColor=white" alt="React and Vite" />
-  <img src="https://img.shields.io/badge/API-FastAPI-059669?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/Security-Passkeys%20%2B%202FA-7C3AED?style=for-the-badge&logo=webauthn&logoColor=white" alt="Passkeys and 2FA" />
-  <img src="https://img.shields.io/badge/Sandbox-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker sandbox" />
+<!-- ── ANIMATED TYPEWRITER TAGLINE ── -->
+<p align="center">
+<img src="https://readme-typing-svg.demolab.com?font=Rajdhani&weight=700&size=28&pause=2000&color=00D9FF&center=true&vCenter=true&multiline=false&repeat=true&width=900&height=55&lines=Secure+Every+Identity.+Monitor+Every+Threat.+Protect+Every+Enterprise.;The+Security+Layer+Every+Application+Deserves.;Built+for+Real+Detection.+Designed+for+Real+Response." alt="Animated security tagline" />
 </p>
 
-`🔐 Authentication` &nbsp;•&nbsp; `🧠 AI intelligence` &nbsp;•&nbsp; `📡 Real-time response` &nbsp;•&nbsp; `🧪 Safe attack rehearsal`
+<!-- ── FEATURE PILL TABS ── -->
+<p align="center">
+  <img src="https://img.shields.io/badge/🔐%20Authentication-Enterprise%20Identity%20%26%20Access-1a1f3a?style=for-the-badge&labelColor=0d1117&color=0ea5e9" alt="Authentication" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/🧠%20AI%20Intelligence-Copilot%20%26%20Threat%20Analysis-1a1f3a?style=for-the-badge&labelColor=0d1117&color=8b5cf6" alt="AI Intelligence" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/📡%20Real--time%20Response-SSE%20%26%20WebSocket-1a1f3a?style=for-the-badge&labelColor=0d1117&color=06b6d4" alt="Real-time Response" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/🧪%20Safe%20Attack%20Rehearsal-Docker%20Sandbox-1a1f3a?style=for-the-badge&labelColor=0d1117&color=10b981" alt="Safe Attack Rehearsal" />
+</p>
+
+<!-- ── TECH STACK BADGES ── -->
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/WebAuthn-7C3AED?style=for-the-badge&logo=webauthn&logoColor=white" />
+  <img src="https://img.shields.io/badge/Groq%20AI-FF6B35?style=for-the-badge&logo=openai&logoColor=white" />
+</p>
+
+<!-- ── STATUS BADGES ── -->
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
+  <img src="https://img.shields.io/badge/Status-Production%20Ready-brightgreen?style=flat-square" />
+  <img src="https://img.shields.io/badge/Backend-Render%20Deployed-46a2f1?style=flat-square&logo=render" />
+  <img src="https://img.shields.io/badge/Frontend-Vercel%20Deployed-000000?style=flat-square&logo=vercel" />
+  <img src="https://img.shields.io/badge/API-FastAPI%20v1-009688?style=flat-square&logo=fastapi" />
+</p>
+
+<!-- ── LIVE DEPLOYMENT BUTTONS ── -->
+<p align="center">
+  <a href="https://shield-sphere-enterprise-account-se.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐%20Live%20Frontend%20→%20Vercel-Visit%20Dashboard-000000?style=for-the-badge&logo=vercel&logoColor=white&labelColor=111111" alt="Live Frontend" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://shieldsphere-enterprise-account-security.onrender.com" target="_blank">
+    <img src="https://img.shields.io/badge/⚡%20Live%20Backend%20→%20Render-API%20%2F%20Health-46a2f1?style=for-the-badge&logo=render&logoColor=white&labelColor=0a0f1e" alt="Live Backend" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://shieldsphere-enterprise-account-security.onrender.com/docs" target="_blank">
+    <img src="https://img.shields.io/badge/📖%20API%20Docs%20→%20Swagger-Interactive%20Docs-009688?style=for-the-badge&logo=fastapi&logoColor=white&labelColor=0a0f1e" alt="API Docs" />
+  </a>
+</p>
 
 </div>
 
 ---
 
-## Table of contents
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 
-- [The problem](#the-problem)
-- [Solution overview](#solution-overview)
-- [Why ShieldSphere is different](#why-shieldsphere-is-different)
-- [Platform features](#platform-features)
-- [System architecture](#system-architecture)
-- [Security workflow](#security-workflow)
-- [Technology stack](#technology-stack)
-- [Project structure](#project-structure)
-- [Quick start](#quick-start)
-- [Environment configuration](#environment-configuration)
-- [Testing and quality checks](#testing-and-quality-checks)
-- [Deployment](#deployment)
-- [Deploy the backend on Render](#deploy-the-backend-on-render)
-- [Security notes](#security-notes)
+## 📋 Table of Contents
+
+<details open>
+<summary><strong>Click to expand / collapse</strong></summary>
+
+| # | Section |
+|---|---------|
+| 1 | [🔴 The Problem](#-the-problem) |
+| 2 | [✅ Solution Overview](#-solution-overview) |
+| 3 | [⭐ Why ShieldSphere is Different](#-why-shieldsphere-is-different) |
+| 4 | [🚀 Live Deployments](#-live-deployments) |
+| 5 | [🛠 Platform Features](#-platform-features) |
+| 6 | [🏗 System Architecture](#-system-architecture) |
+| 7 | [🔄 Security Workflow & API Lifecycle](#-security-workflow--api-lifecycle) |
+| 8 | [💻 Technology Stack](#-technology-stack) |
+| 9 | [📁 Project Structure](#-project-structure) |
+| 10 | [⚡ Quick Start](#-quick-start) |
+| 11 | [⚙️ Environment Configuration](#️-environment-configuration) |
+| 12 | [🧪 Testing & Quality Checks](#-testing--quality-checks) |
+| 13 | [☁️ Deployment](#️-deployment) |
+| 14 | [🔒 Security Notes](#-security-notes) |
+| 15 | [📜 License](#-license) |
+
+</details>
 
 ---
 
-## The problem
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 
-Modern account security is often fragmented. Authentication, devices, login history, breach status, suspicious activity, integrations, and compliance evidence live in separate places. This makes it difficult for a user or security team to answer critical questions quickly:
+## 🔴 The Problem
 
-- **Who is signed in to this account right now?**
-- **Is this device, location, or login pattern unusual?**
-- **Was a threat detected, blocked, and recorded correctly?**
-- **What should the user do next?**
-- **Can the detection workflow be tested safely without attacking a real system?**
+Modern account security is **fragmented by design**. Authentication, device management, login history, breach detection, suspicious-activity alerts, compliance evidence — they all live in separate silos. This leaves critical questions unanswered in real time:
 
-ShieldSphere brings those answers into one account-security control center.
+<div align="center">
 
-## Solution overview
+| ❓ Question | 😰 The Reality Without ShieldSphere |
+|-------------|--------------------------------------|
+| **Who is signed in right now?** | No unified session visibility |
+| **Is this login pattern unusual?** | No behavioral baseline to compare |
+| **Was the threat blocked and recorded?** | No end-to-end audit trail |
+| **What should the user do next?** | No guided containment path |
+| **Can defenses be tested safely?** | No isolated simulation environment |
 
-ShieldSphere is a full-stack platform that protects an account from sign-in through incident response. It combines strong authentication, device and session visibility, threat detection, behavioural analytics, AI assistance, compliance reporting, and isolated attack simulation.
+</div>
 
-| Security stage | ShieldSphere capability | User outcome |
-|---|---|---|
-| 🧱 Prevent | Password intelligence, passkeys, 2FA, trusted devices, IP blocklist | Reduces account-takeover risk before it starts |
-| 👀 Observe | Login history, active sessions, recognized-device locations, audit trail | Makes account activity understandable and traceable |
-| 🧠 Detect | Brute-force, SQLi, XSS, phishing, port scan, vulnerability and behavioural signals | Converts suspicious activity into threats and alerts |
-| 🚨 Respond | Guided “Secure my account” containment, session revocation, device distrust, IP blocking | Provides immediate, focused recovery actions |
-| 🧪 Validate | Docker-isolated sandbox simulations and attack-to-defense replay | Demonstrates that defensive controls work safely |
-| 📋 Prove | Executive PDF reports and GDPR Excel export | Produces understandable evidence for users and compliance workflows |
+> **ShieldSphere brings all of these answers into one enterprise account-security control center.**
 
-## Why ShieldSphere is different
+---
+
+## ✅ Solution Overview
+
+ShieldSphere is a full-stack platform that protects an account from sign-in through incident response — connecting **prevention**, **detection**, **response**, and **safe validation** in one product.
+
+<div align="center">
+
+| 🔰 Security Stage | 🛡 ShieldSphere Capability | ✅ User Outcome |
+|:-----------------:|:--------------------------|:---------------|
+| 🧱 **Prevent** | Password intelligence, passkeys, 2FA, trusted devices, IP blocklist | Reduces account-takeover risk before it starts |
+| 👀 **Observe** | Login history, active sessions, recognized-device locations, audit trail | Makes account activity understandable and traceable |
+| 🧠 **Detect** | Brute-force, SQLi, XSS, phishing, port scan, vulnerability & behavioural signals | Converts suspicious activity into threats and alerts |
+| 🚨 **Respond** | Guided "Secure My Account" containment, session revocation, device distrust, IP blocking | Provides immediate, focused recovery actions |
+| 🧪 **Validate** | Docker-isolated sandbox simulations and attack-to-defense replay | Demonstrates that defensive controls work safely |
+| 📋 **Prove** | Executive PDF reports and GDPR Excel export | Produces understandable evidence for compliance workflows |
+
+</div>
+
+---
+
+## ⭐ Why ShieldSphere is Different
 
 > **It does not only report security status — it connects prevention, detection, response, and safe validation in one user-facing product.**
 
-| Unique feature | What makes it valuable |
-|---|---|
-| 🧪 **Attack-to-defense replay** | Runs controlled scenarios in an isolated Docker sandbox, then shows the progression from attack activity to detection, alerting, blocking, and outcome. |
-| 🧭 **Contextual AI Copilot** | Answers questions using the user’s real security context, such as threats, alerts, login activity, devices, score factors, settings, and navigation guidance. |
-| 🗺️ **Location-aware account visibility** | Displays approximate session and recognized-device locations with details on hover, without exposing unnecessary location data. |
-| 🧬 **Two-device behavioural baseline** | Learns normal patterns only after two successful sign-ins from two recognized devices, reducing false confidence from a single-device baseline. |
-| 🛟 **Guided account containment** | Consolidates urgent actions—revoke sessions, distrust devices, block suspicious IPs, and protect sign-in—into one response path. |
-| 📄 **Human-readable compliance output** | Creates structured PDF security reports and Excel GDPR exports instead of raw JSON dumps. |
-
-## Platform features
-
-### 🔐 Identity and access protection
-
-- Secure HTTP-only cookie authentication with access-token refresh.
-- Password-strength checks and Have I Been Pwned breach-status support.
-- TOTP two-factor authentication and WebAuthn passkeys.
-- Recognized devices with browser, operating system, trust state, last IP, first/last seen, and approximate location.
-- Active-session visibility with revoke-one and revoke-all controls.
-- Manual and automatic IP blocklisting with a reason and timed duration.
-
-### 📡 Detection, alerts, and response
-
-- Threat and alert centre with severity, source IP, simulation context, remediation, and resolution state.
-- Detection coverage for sandboxed brute force, SQL injection, cross-site scripting, port scanning, vulnerability scanning, packet capture, phishing, and social-engineering exercises.
-- Behavioural anomaly scoring based on known devices, countries, network providers, typical hours, and sign-in frequency.
-- Account device-activity timeline: sign-ins, failed sign-ins, active sessions, sign-outs/revocations, device details, IPs, and approximate locations.
-- A score breakdown that explains the factors behind the account-security score.
-
-### 🧠 Intelligence and assessment
-
-- AI Copilot with security posture context and in-product navigation assistance.
-- Website vulnerability scan with readable HTTPS and browser-header findings, risk explanation, and hardening guidance.
-- URL and IP reputation assessment through supported external intelligence providers.
-- AI-generated root-cause analysis and remediation guidance when configured.
-
-### 🧪 Safe security validation
-
-- Docker-isolated sandbox network with internet egress disabled by default.
-- Copy-ready JSON parameter examples in [`attack_simulation_params.json`](attack_simulation_params.json).
-- Live simulator event feed over WebSockets.
-- Clear completed simulation runs without removing generated threat/alert evidence.
-- Defensive replay timeline that measures detection, alerts, blocks, and time to detect.
-
-### 📋 Compliance and integrations
-
-- Detailed executive security report PDF with visual security posture, trends, recommendations, footer, and page numbers.
-- Multi-sheet GDPR data export in Excel format.
-- Auditable account actions with individual and clear-all log controls.
-- Signed HMAC-SHA256 webhooks and optional SMTP email delivery.
-- Integration health status and test delivery controls.
-
-## System architecture
-
 <div align="center">
-  <img src="docs/assets/shieldsphere-system-architecture.png" alt="ShieldSphere architecture: dashboard, API, data, AI, sandbox, integrations, and location intelligence connected to a central security hub" width="100%" />
+
+| 🔑 Unique Feature | 💡 What Makes It Valuable |
+|:------------------|:--------------------------|
+| 🧪 **Attack-to-Defense Replay** | Runs controlled scenarios in an isolated Docker sandbox, then shows the full progression from attack activity → detection → alerting → blocking → outcome |
+| 🧭 **Contextual AI Copilot** | Answers questions using the user's real security context: threats, alerts, login activity, devices, score factors, settings, and navigation guidance |
+| 🗺️ **Location-Aware Account Visibility** | Displays approximate session and recognized-device locations with details on hover, without exposing unnecessary location data |
+| 🧬 **Two-Device Behavioural Baseline** | Learns normal patterns only after two successful sign-ins from two recognized devices, reducing false confidence from a single-device baseline |
+| 🛟 **Guided Account Containment** | Consolidates urgent actions—revoke sessions, distrust devices, block suspicious IPs, and protect sign-in—into one response path |
+| 📄 **Human-Readable Compliance Output** | Creates structured PDF security reports and Excel GDPR exports instead of raw JSON dumps |
+
 </div>
 
-```mermaid
-flowchart TB
-  U[👤 Account user] --> F[⚛️ React + Vite dashboard]
-  F -->|HTTPS / cookies / SSE / WebSocket| A[⚡ FastAPI security API]
+---
 
-  A <--> P[(🐘 PostgreSQL<br/>accounts, sessions, devices, alerts, audits)]
-  A <--> R[(🟥 Redis<br/>rate limits, block lookup, live coordination)]
-  A --> D[🧠 Detection & UBA engines]
-  D --> T[🚨 Threats, alerts & security score]
-  A --> G[🗺️ GeoIP / location service]
-  A --> I[🔎 Reputation & AI providers]
-  A --> W[📨 Signed webhooks / SMTP]
-  A --> S[🐳 Isolated Docker simulator]
-  S -->|safe simulation evidence| D
-  A --> C[📄 PDF reports & GDPR Excel export]
+## 🚀 Live Deployments
+
+<div align="center">
+
+```
+╔═══════════════════════════════════════════════════════════════════╗
+║                    SHIELDSPHERE — DEPLOYED LINKS                  ║
+╠═══════════════════════════════════════════════════════════════════╣
+║  🌐 Frontend   https://shield-sphere-enterprise-account-se.       ║
+║                vercel.app/                                        ║
+║  ⚡ Backend    https://shieldsphere-enterprise-account-           ║
+║                security.onrender.com                              ║
+║  📖 API Docs   https://shieldsphere-enterprise-account-           ║
+║                security.onrender.com/docs                         ║
+║  ❤️ Health     https://shieldsphere-enterprise-account-           ║
+║                security.onrender.com/health                       ║
+╚═══════════════════════════════════════════════════════════════════╝
 ```
 
-### Core components
+| Service | URL | Status |
+|:-------:|:----|:------:|
+| 🌐 **Frontend** | [shield-sphere-enterprise-account-se.vercel.app](https://shield-sphere-enterprise-account-se.vercel.app/) | ![Vercel](https://img.shields.io/badge/Live-✓-brightgreen?style=flat-square) |
+| ⚡ **Backend API** | [shieldsphere-enterprise-account-security.onrender.com](https://shieldsphere-enterprise-account-security.onrender.com) | ![Render](https://img.shields.io/badge/Live-✓-brightgreen?style=flat-square) |
+| 📖 **Swagger UI** | [.../docs](https://shieldsphere-enterprise-account-security.onrender.com/docs) | ![Docs](https://img.shields.io/badge/Docs-✓-0ea5e9?style=flat-square) |
+| ❤️ **Health Check** | [.../health](https://shieldsphere-enterprise-account-security.onrender.com/health) | ![Health](https://img.shields.io/badge/Healthy-✓-10b981?style=flat-square) |
 
-| Component | Responsibility |
-|---|---|
-| **React + Vite frontend** | Responsive dashboard, security controls, maps, simulator replay, report downloads, and user guidance. |
-| **FastAPI backend** | Authenticated REST API, SSE Copilot stream, WebSocket simulator feed, security workflows, and policy enforcement. |
-| **PostgreSQL** | Persistent users, login history, sessions, devices, threats, alerts, simulations, integrations, reports, and audit records. |
-| **Redis** | Fast rate limiting, blocklist synchronization, and short-lived security coordination. |
-| **Detection services** | Behavioural analytics, threat recording, security-score calculation, automated blocking, and response orchestration. |
-| **Docker simulator** | Disposable, isolated attack environment for controlled exercises—not public-target attacks. |
-| **External integrations** | AI, reputation intelligence, GeoIP, HMAC-signed webhooks, and optional email delivery. |
+</div>
 
-## Security workflow
+---
 
-```mermaid
-sequenceDiagram
-  participant User as 👤 User / device
-  participant API as ⚡ ShieldSphere API
-  participant Engine as 🧠 Detection engine
-  participant Store as 🗄️ Security records
-  participant UI as 🖥️ Dashboard / Copilot
+## 🛠 Platform Features
 
-  User->>API: Sign-in attempt or account activity
-  API->>Store: Record login, session, device and audit data
-  API->>Engine: Evaluate rules, blocklist and behavioural signals
-  Engine->>Store: Create threat / alert when a rule triggers
-  Engine-->>UI: Publish updated security state
-  UI-->>User: Explain risk, affected device and recommended action
-  User->>API: Revoke session, distrust device, block IP, or secure account
-  API->>Store: Preserve response evidence and update security score
+### 🔐 Identity & Access Protection
+
+<div align="center">
+<img src="docs/assets/shieldsphere-security-tools.png" alt="Security Tools — Password Breach Checker, URL Phishing Scanner, IP Reputation Checker" width="90%" />
+</div>
+
+<br>
+
+| Feature | Description | Technology |
+|:--------|:------------|:-----------|
+| 🔑 **Secure Auth** | HTTP-only cookie auth with access-token refresh | JWT, bcrypt, FastAPI |
+| 🔍 **Password Intelligence** | Strength checks + HIBP breach-status via k-anonymity | zxcvbn, HIBP, hashlib |
+| 📱 **TOTP 2FA** | Two-factor authentication with QR enrollment | PyOTP, QRCode, Pillow |
+| 🗝 **WebAuthn Passkeys** | Hardware-level passwordless authentication | WebAuthn, python-fido2 |
+| 💻 **Device Management** | Recognized devices with browser/OS/trust state/locations | React Leaflet, SQLAlchemy |
+| 🌐 **Active Sessions** | Revoke-one and revoke-all session controls with map | FastAPI, PostgreSQL |
+| 🚫 **IP Blocklist** | Manual and automatic blocking with reason and duration | Redis, APScheduler |
+
+---
+
+### 📡 Threat Detection, Alerts & Response
+
+<div align="center">
+<img src="docs/assets/shieldsphere-threat-monitoring.png" alt="Enterprise Threat Monitoring — Real-time alerts and world map" width="90%" />
+</div>
+
+<br>
+
+| Detection Type | Signal | Action |
+|:---------------|:-------|:-------|
+| 💥 **Brute Force** | Redis sliding-window failed-attempt count | Auto-block IP, create threat/alert |
+| 💉 **SQL Injection** | Payload pattern matching in sandbox | Record threat, generate AI RCA |
+| 🕷 **XSS Detection** | Reflected payload detection | Alert with remediation |
+| 🌍 **Impossible Travel** | Geographic distance / time impossibility | Flag anomaly, notify user |
+| 🔭 **Port Scanning** | Nmap results from isolated attacker | Record threat with open ports |
+| 🎣 **Phishing Detection** | Levenshtein domain-distance scoring | Score and block suspicious URLs |
+| 📊 **Behavioural Analytics** | Known devices, countries, ASNs, typical hours | Anomaly score, UBA baseline |
+| 🧬 **Breach Risk** | HIBP status + threat correlation | Score penalty, alert |
+
+---
+
+### 🧠 Intelligence & Assessment
+
+<div align="center">
+<img src="docs/assets/shieldsphere-security-assessment.png" alt="Security Assessment Tools — Password Breach, URL Phishing, IP Reputation" width="90%" />
+</div>
+
+<br>
+
+- 🤖 **AI Security Copilot** — Streams grounded SSE responses from Groq using user's real context (threats, alerts, score, sessions, devices)
+- 🌐 **Website Vulnerability Scanner** — Real HTTP header checks, risk scoring, and AI hardening guidance
+- 🔎 **URL Reputation Scan** — VirusTotal submission, background polling, persisted scan results
+- 🌍 **IP Reputation Check** — VirusTotal + AbuseIPDB combined reputation with geographic origin
+- 🔑 **Password Breach Check** — SHA-1 k-anonymity prefix, never sends plaintext to HIBP
+- 🧠 **AI Threat Analysis** — Auto-generated root-cause narrative, attack-path hypotheses, remediation recommendations
+
+---
+
+### 🧪 Safe Security Validation (Attack Sandbox)
+
+```
+ ┌─────────────────────────────────────────────────────────────────┐
+ │                  DOCKER ISOLATED SANDBOX                        │
+ │                                                                 │
+ │  ┌──────────────┐   isolated bridge   ┌───────────────────────┐ │
+ │  │  🔴 Attacker │ ──────────────────► │  🎯 Vulnerable Target │ │
+ │  │   Container  │    (no internet)    │   (Flask + SQLite)    │ │
+ │  └──────┬───────┘                     └───────────────────────┘ │
+ │         │ events via WebSocket                                   │
+ │         ▼                                                        │
+ │  ┌──────────────────────────────────┐                           │
+ │  │  🛡 ShieldSphere Detection Engine │                           │
+ │  │  Threats • Alerts • Score        │                           │
+ │  └──────────────────────────────────┘                           │
+ └─────────────────────────────────────────────────────────────────┘
 ```
 
-## Technology stack
+| Simulation Type | What It Tests | Isolation |
+|:----------------|:-------------|:----------|
+| 💥 Brute Force | Auth failure detection & auto-blocking | ✅ Docker sandbox |
+| 💉 SQL Injection | Vulnerable endpoint exploitation | ✅ Docker sandbox |
+| 🕷 XSS Attack | Reflected payload detection | ✅ Docker sandbox |
+| 🔭 Port Discovery | Open-port service scanning (Nmap) | ✅ Docker sandbox |
+| 🔬 Vulnerability Scan | HTTP header security analysis | ✅ Docker sandbox |
+| 📦 Packet Capture | Scapy live traffic capture + AI analysis | ✅ Docker sandbox |
+| 🎣 Phishing Simulation | Domain-distance awareness training | ✅ Docker sandbox |
+| 🤝 Social Engineering | AI-generated scenario + scored response | ✅ Docker sandbox |
+
+---
+
+### 📋 Compliance & Integrations
+
+<div align="center">
+<img src="docs/assets/shieldsphere-compliance-dashboard.png" alt="GDPR Compliance Dashboard" width="80%" />
+</div>
+
+<br>
+
+- 📄 **Executive PDF Reports** — Color-accented security report with visual posture, trends, recommendations, footer, and page numbers
+- 📊 **GDPR Excel Export** — Multi-sheet export: profile, login history, threats, alerts, devices, sessions, audit data
+- 📜 **Audit Trail** — Paginated audit records with individual and clear-all controls
+- 🔔 **Signed Webhooks** — HMAC-SHA256 webhook delivery with test controls
+- 📧 **SMTP Email** — Optional email delivery for security notifications
+- ❤️ **Integration Health** — Status checks and test delivery for all configured integrations
+
+---
+
+## 🏗 System Architecture
+
+<div align="center">
+
+<img src="docs/assets/shieldsphere-architecture-ai.png" alt="ShieldSphere System Architecture — React+Vite → FastAPI → PostgreSQL, Redis, AI Engine, Docker Sandbox, GeoIP, Integrations" width="100%" />
+
+</div>
+
+### 🧩 Core Components
+
+<div align="center">
+
+| Component | Role | Technology |
+|:----------|:-----|:-----------|
+| ⚛️ **React + Vite Frontend** | Responsive dashboard, security controls, maps, simulator replay, report downloads | React, TypeScript, Vite, TanStack, Leaflet |
+| ⚡ **FastAPI Backend** | Authenticated REST API, SSE Copilot stream, WebSocket simulator feed, security workflows | Python 3.12+, FastAPI, Uvicorn, Pydantic |
+| 🐘 **PostgreSQL** | Persistent users, login history, sessions, devices, threats, alerts, reports, audits | SQLAlchemy async, Alembic, psycopg3 |
+| 🟥 **Redis** | Fast rate limiting, blocklist synchronization, short-lived security coordination | redis-py, hiredis, SlowAPI |
+| 🧠 **Detection Services** | Behavioural analytics, threat recording, security-score calculation, automated blocking | UBA Engine, APScheduler |
+| 🐳 **Docker Simulator** | Disposable, isolated attack environment — controlled exercises only | Docker SDK, Flask target, Scapy, Nmap |
+| 🔌 **External Integrations** | AI, reputation intelligence, GeoIP, signed webhooks, optional email | Groq, VirusTotal, AbuseIPDB, MaxMind |
+
+</div>
+
+```
+                        ╔════════════════════╗
+                        ║  👤 Account User   ║
+                        ╚═════════╤══════════╝
+                                  │ HTTPS
+                        ╔═════════▼══════════╗
+                        ║  ⚛️ React + Vite   ║
+                        ║     Dashboard      ║
+                        ╚═════════╤══════════╝
+                     cookies/SSE/WebSocket
+                        ╔═════════▼══════════╗
+              ┌─────────║  ⚡ FastAPI API    ║─────────┐
+              │         ╚═════════╤══════════╝         │
+              │                   │                    │
+    ╔═════════▼═══╗    ╔══════════▼═════╗    ╔════════▼═══════╗
+    ║ 🐘 PostgreSQL║    ║  🟥 Redis      ║    ║ 🧠 Detection   ║
+    ║  (records)   ║    ║  (rate limits) ║    ║  & UBA Engine  ║
+    ╚═════════════╝    ╚════════════════╝    ╚════════╤═══════╝
+                                                      │
+              ┌───────────┬────────────┬──────────────┘
+    ╔═════════▼═╗  ╔══════▼═════╗  ╔══▼═════════════╗
+    ║ 🌍 GeoIP   ║  ║ 🔎 AI/Rep  ║  ║ 🐳 Docker      ║
+    ║  Location  ║  ║  Providers ║  ║   Simulator    ║
+    ╚═══════════╝  ╚════════════╝  ╚════════════════╝
+```
+
+---
+
+## 🔄 Security Workflow & API Lifecycle
+
+### Security Event Flow
+
+<div align="center">
+<img src="docs/assets/shieldsphere-api-lifecycle.png" alt="ShieldSphere API Request Lifecycle — from client request through rate limiting, JWT auth, detection engine, to dashboard update" width="100%" />
+</div>
+
+<br>
+
+```
+ 👤 User / Device          ⚡ ShieldSphere API        🧠 Detection Engine
+        │                          │                          │
+        │── Sign-in attempt ───────►│                          │
+        │                          │── Record login, session ─►│
+        │                          │── Evaluate rules & signals►│
+        │                          │                          │── Create threat/alert
+        │                          │◄── Updated security state─│
+        │◄── Explain risk + action ─│                          │
+        │                          │                          │
+        │── Revoke/Block/Secure ───►│                          │
+        │                          │── Preserve evidence ─────►│
+        │                          │── Update security score ──►│
+```
+
+### API Request Lifecycle
+
+```
+  Client              Rate         JWT          FastAPI        Detection         DB/Cache
+  Request  ─────────► Limiter ───► Auth ──────► Router ──────► Engine  ────────► Write
+    │         HTTPS    │            │             │               │                │
+    │                  │            │             │               │◄── AI RCA ─────┤
+    │                  │            │             │               │                │
+    │◄──────────────────────────────────── SSE / WebSocket Response ───────────────┘
+```
+
+---
+
+## 💻 Technology Stack
+
+### 🎨 Frontend
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/TanStack-FF4154?style=for-the-badge&logo=reactquery&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white" />
+  <img src="https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=leaflet&logoColor=white" />
+</p>
+
+### ⚙️ Backend
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" />
+  <img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white" />
+  <img src="https://img.shields.io/badge/Uvicorn-499848?style=for-the-badge&logo=gunicorn&logoColor=white" />
+  <img src="https://img.shields.io/badge/Alembic-6BA81E?style=for-the-badge" />
+</p>
+
+### 🗄️ Data & Cache
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
+  <img src="https://img.shields.io/badge/psycopg3-336791?style=for-the-badge&logo=postgresql&logoColor=white" />
+</p>
+
+### 🔒 Security & Auth
+
+<p align="center">
+  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" />
+  <img src="https://img.shields.io/badge/WebAuthn-7C3AED?style=for-the-badge&logo=webauthn&logoColor=white" />
+  <img src="https://img.shields.io/badge/TOTP%202FA-FF6B35?style=for-the-badge&logo=authy&logoColor=white" />
+  <img src="https://img.shields.io/badge/bcrypt-003153?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/HMAC--SHA256-00897B?style=for-the-badge" />
+</p>
+
+### 🧠 AI & Intelligence
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Groq%20AI-FF6B35?style=for-the-badge&logo=openai&logoColor=white" />
+  <img src="https://img.shields.io/badge/VirusTotal-394EFF?style=for-the-badge&logo=virustotal&logoColor=white" />
+  <img src="https://img.shields.io/badge/AbuseIPDB-CC0000?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/MaxMind%20GeoIP-004080?style=for-the-badge&logo=maxmind&logoColor=white" />
+  <img src="https://img.shields.io/badge/HIBP-8B0000?style=for-the-badge" />
+</p>
+
+### 🔄 Realtime & Simulation
+
+<p align="center">
+  <img src="https://img.shields.io/badge/WebSockets-010101?style=for-the-badge&logo=socketdotio&logoColor=white" />
+  <img src="https://img.shields.io/badge/SSE-E44D26?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Nmap-9FEF00?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Scapy-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+</p>
+
+### ☁️ Deployment
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img src="https://img.shields.io/badge/Render-46a2f1?style=for-the-badge&logo=render&logoColor=white" />
+  <img src="https://img.shields.io/badge/Caddy-00ADD8?style=for-the-badge&logo=caddy&logoColor=white" />
+  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
+</p>
+
+### Full Stack Overview Table
+
+<div align="center">
 
 | Layer | Technologies |
-|---|---|
+|:------|:-------------|
 | **Frontend** | React, TypeScript, Vite, TanStack Router, TanStack Query, Tailwind CSS, shadcn/ui, Leaflet |
-| **Backend** | Python 3.12+, FastAPI, Pydantic, SQLAlchemy async, Alembic, Uvicorn |
-| **Data and cache** | PostgreSQL, Redis, Psycopg |
-| **Security** | HTTP-only cookies, JWT, TOTP, WebAuthn, HMAC-SHA256 webhook signing, CSP/HSTS, trusted-host validation, rate limiting |
-| **Intelligence** | Groq-compatible AI, VirusTotal, AbuseIPDB, MaxMind GeoLite2 City |
-| **Realtime** | Server-Sent Events and WebSockets |
-| **Simulation** | Docker Desktop / Docker Engine, Nmap for port-scan exercises |
-| **Reports** | ReportLab PDF generation and multi-sheet Excel export |
-| **Deployment** | Vercel for the frontend; Docker, Caddy, Nginx, PostgreSQL, and Redis for the full production stack |
+| **Backend** | Python 3.12+, FastAPI, Pydantic v2, SQLAlchemy async, Alembic, Uvicorn, structlog, SlowAPI |
+| **Data & Cache** | PostgreSQL, Redis, psycopg3, APScheduler |
+| **Security** | HTTP-only cookies, JWT, TOTP, WebAuthn, HMAC-SHA256 webhook signing, CSP/HSTS, rate limiting |
+| **Intelligence** | Groq AI, VirusTotal, AbuseIPDB, MaxMind GeoLite2 City, HIBP, zxcvbn |
+| **Realtime** | Server-Sent Events (SSE), WebSockets |
+| **Simulation** | Docker SDK, Flask+SQLite target, Python requests, Scapy, python-nmap/Nmap |
+| **Reports** | ReportLab PDF generation, openpyxl multi-sheet Excel export |
+| **Deployment** | Vercel (frontend), Render (backend), Docker, Caddy, Nginx |
 
-## Project structure
+</div>
 
-```text
+---
+
+## 📁 Project Structure
+
+```
 ShieldSphere-Enterprise_Account_Security_Platform/
-├── frontend/                 # React dashboard and UI components
-│   └── src/routes/           # Dashboard, UBA, simulator, compliance, settings...
-├── backend/                  # FastAPI application
-│   ├── app/api/v1/           # Authenticated API modules
-│   ├── app/services/         # Detection, UBA, AI, GeoIP, sandbox logic
-│   ├── app/workers/          # Scheduled recovery and security jobs
-│   └── alembic/              # Database migrations
-├── docs/assets/              # README architecture artwork
-├── attack_simulation_params.json
-├── VERCEL_DEPLOYMENT.md      # Frontend deployment guide
-├── compose.production.yml    # Full production stack
-└── compose.simulator.yml     # Isolated simulator stack
+│
+├── 🎨 frontend/                        # React + Vite dashboard
+│   ├── src/
+│   │   ├── routes/                     # Dashboard, UBA, simulator, compliance, settings
+│   │   ├── components/                 # Reusable UI components
+│   │   └── styles.css                  # Global styles
+│   ├── .env                            # Frontend environment variables
+│   └── vite.config.ts                  # Vite configuration
+│
+├── ⚡ backend/                          # FastAPI application
+│   ├── app/
+│   │   ├── api/v1/                     # Authenticated API modules
+│   │   │   ├── auth.py                 # Authentication & 2FA
+│   │   │   ├── dashboard.py            # Statistics & security score
+│   │   │   ├── sessions.py             # Session management
+│   │   │   ├── devices.py              # Device trust management
+│   │   │   ├── threats.py              # Threat response
+│   │   │   ├── alerts.py               # Alert management
+│   │   │   ├── assessment.py           # Security assessment tools
+│   │   │   ├── copilot.py              # AI copilot streaming
+│   │   │   ├── simulator.py            # Attack sandbox control
+│   │   │   └── compliance.py           # Reports & GDPR export
+│   │   ├── services/                   # Detection, UBA, AI, GeoIP, sandbox logic
+│   │   ├── workers/                    # Scheduled recovery and security jobs
+│   │   └── core/
+│   │       └── security.py             # JWT, auth, password utilities
+│   ├── alembic/                        # Database migrations
+│   └── scripts/                        # PowerShell deployment scripts
+│
+├── 📄 docs/assets/                     # README artwork and diagrams
+├── ⚙️ compose.production.yml            # Full production Docker stack
+├── 🐳 compose.simulator.yml             # Isolated simulator Docker stack
+├── 🎯 attack_simulation_params.json     # Copy-ready simulation parameters
+├── 📋 features.md                       # Comprehensive feature documentation
+├── 🚀 VERCEL_DEPLOYMENT.md              # Frontend deployment guide
+└── 📜 LICENSE                           # MIT License
 ```
 
-## Quick start
+---
+
+## ⚡ Quick Start
 
 ### Prerequisites
 
-| Requirement | Why it is needed |
-|---|---|
-| Python 3.12+ | FastAPI backend runtime |
-| Node.js 18+ | React frontend development and build |
-| PostgreSQL | Persistent application data |
-| Redis | Rate limiting and security coordination |
-| Docker Desktop | Attack-simulator sandbox |
-| Nmap | Port-scan simulation support |
-| GeoLite2 City `.mmdb` | Approximate IP geolocation |
+<div align="center">
 
-### 1. Configure the environment
+| Requirement | Version | Why Needed |
+|:------------|:-------:|:-----------|
+| ![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat-square&logo=python&logoColor=white) | 3.12+ | FastAPI backend runtime |
+| ![Node](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=nodedotjs&logoColor=white) | 18+ | React frontend development and build |
+| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-316192?style=flat-square&logo=postgresql&logoColor=white) | 15+ | Persistent application data |
+| ![Redis](https://img.shields.io/badge/Redis-7+-DC382D?style=flat-square&logo=redis&logoColor=white) | 7+ | Rate limiting and security coordination |
+| ![Docker](https://img.shields.io/badge/Docker-Desktop-2496ED?style=flat-square&logo=docker&logoColor=white) | Latest | Attack-simulator sandbox |
+| 🗺️ Nmap | Latest | Port-scan simulation support |
+| 🌍 GeoLite2 City `.mmdb` | Latest | Approximate IP geolocation |
 
-Copy the supplied templates and set real values locally. Never commit `.env` files.
+</div>
+
+---
+
+### 1️⃣ Configure the Environment
 
 ```powershell
+# Copy the supplied templates — never commit .env files
 Copy-Item backend\.env.example backend\.env
 Copy-Item frontend\.env.example frontend\.env
 ```
 
-### 2. Start PostgreSQL and Redis
+---
+
+### 2️⃣ Start PostgreSQL and Redis
 
 ```powershell
-# Verify PostgreSQL
+# Verify PostgreSQL is running
 Get-Service *postgres*
 
 # Verify Redis (expected result: PONG)
 redis-cli ping
 ```
 
-### 3. Prepare and start the backend
+---
+
+### 3️⃣ Prepare and Start the Backend
 
 ```powershell
 cd backend
@@ -248,12 +568,16 @@ venv\Scripts\alembic.exe upgrade head
 .\scripts\start.ps1
 ```
 
-Backend health: <http://127.0.0.1:8000/health>  
-API documentation: <http://127.0.0.1:8000/docs>
+| Endpoint | URL |
+|:---------|:----|
+| 🏥 Backend Health | http://127.0.0.1:8000/health |
+| 📖 API Documentation | http://127.0.0.1:8000/docs |
 
-> On Windows, use `scripts\start.ps1` rather than running Uvicorn directly. The script starts `main.py`, which applies the PostgreSQL-compatible event-loop policy.
+> **💡 Windows Note:** Use `scripts\start.ps1` rather than running Uvicorn directly. The script starts `main.py`, which applies the PostgreSQL-compatible event-loop policy.
 
-### 4. Start the frontend
+---
+
+### 4️⃣ Start the Frontend
 
 In a second terminal:
 
@@ -263,9 +587,11 @@ npm install
 npm run dev
 ```
 
-Open <http://127.0.0.1:3000>.
+Open [http://127.0.0.1:3000](http://127.0.0.1:3000)
 
-## Environment configuration
+---
+
+## ⚙️ Environment Configuration
 
 ### Backend (`backend/.env`)
 
@@ -296,20 +622,19 @@ SMTP_USE_TLS=true
 
 ### Using Neon PostgreSQL
 
-Neon is fully compatible with ShieldSphere. In the Neon console, use **Connect** to copy the connection string for the database branch you want to use, then set it as `DATABASE_URL` in `backend/.env`. Keep `sslmode=require` in the copied URL. The application automatically converts Neon's standard `postgresql://` format to SQLAlchemy's asynchronous `postgresql+psycopg://` driver format.
+Neon is fully compatible with ShieldSphere. Copy the connection string from the Neon console and set it as `DATABASE_URL` in `backend/.env`:
 
 ```dotenv
 DATABASE_URL=postgresql://<user>:<password>@<endpoint>.neon.tech/<database>?sslmode=require
 ```
 
-Run the normal backend startup command once after changing the URL. It applies every Alembic migration before the API starts, creating the ShieldSphere tables in the selected Neon database:
+The application automatically converts Neon's standard `postgresql://` format to SQLAlchemy's async `postgresql+psycopg://` driver format.
 
 ```powershell
+# Run migrations after changing the URL
 cd backend
 .\scripts\start.ps1
 ```
-
-For long-running API deployments, prefer the direct Neon endpoint for migrations and this backend's `NullPool` connection model. Never commit the actual Neon connection URL; it includes the database password.
 
 ### Frontend (`frontend/.env`)
 
@@ -319,128 +644,183 @@ VITE_API_BASE_URL=http://127.0.0.1:8000/api/v1
 VITE_SIMULATOR_WS_URL=ws://127.0.0.1:8000/api/v1/simulator/ws
 ```
 
-### Passkey hostname note
+> **🔑 Passkey Note:** WebAuthn passkeys are bound to a relying-party hostname. Local defaults use `127.0.0.1`. If you use `localhost` or deploy to a domain, set `WEBAUTHN_RP_ID` to that hostname and `WEBAUTHN_ORIGIN` to the exact HTTPS frontend origin.
 
-WebAuthn passkeys are bound to a relying-party hostname. Local defaults use `127.0.0.1`. If you use `localhost` or deploy to a domain, set `WEBAUTHN_RP_ID` to that hostname and `WEBAUTHN_ORIGIN` to the exact HTTPS frontend origin.
+---
 
-## Testing and quality checks
+## 🧪 Testing & Quality Checks
 
 Run these before committing or deploying:
 
 ```powershell
-# Backend
+# ── Backend ──────────────────────────────────────────
 cd backend
 .\venv\Scripts\python.exe -m pytest -q
 .\scripts\verify.ps1 -Integration
 
-# Frontend
+# ── Frontend ─────────────────────────────────────────
 cd ..\frontend
 npm run lint
 npx tsc --noEmit
 npm run build
 ```
 
-For dependency auditing:
+### Dependency Auditing
 
 ```powershell
 backend\venv\Scripts\python.exe -m pip_audit -r backend\requirements.txt
 npm --prefix frontend audit
 ```
 
-## Deployment
+---
 
-### Vercel frontend
+## ☁️ Deployment
 
-Deploy the Vite frontend to Vercel and configure `VITE_API_ORIGIN`, `VITE_API_BASE_URL`, and `VITE_SIMULATOR_WS_URL` to point to your deployed backend. Follow the full guide in [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md).
+### 🌐 Vercel Frontend
 
-### Deploy the backend on Render
-
-> **Recommended runtime: Docker.** The backend is still a Python/FastAPI application, but its existing Dockerfile installs required operating-system packages such as Nmap and libpcap. Docker also keeps the deployed environment reproducible.
-
-1. Push this repository to GitHub, then sign in to [Render](https://render.com).
-2. Create a **PostgreSQL** database and a **Key Value** instance in the same Render region as the API. Keep their internal connection URLs private.
-3. Select **New → Web Service**, connect this GitHub repository, and use these settings:
-
-| Render setting | Value |
-|---|---|
-| Name | `shieldsphere-api` (or your preferred unique name) |
-| Region | The same region as PostgreSQL and Key Value |
-| Branch | Your production branch, such as `main` |
-| Language | **Docker** |
-| Root Directory | `backend` |
-| Dockerfile Path | `./Dockerfile` |
-| Docker Command | Leave blank; the repository entrypoint runs migrations and starts FastAPI |
-| Health Check Path | `/health` |
-| Auto-Deploy | Enable on push if desired |
-
-Render assigns a `PORT` environment variable to web services. The backend container now reads that value automatically and falls back to port `8000` only outside Render.
-
-4. Add these environment variables in Render’s **Environment** section. Use **Generate Value** for the two JWT secrets and never place actual secrets in Git:
-
-| Variable | Render production value |
-|---|---|
-| `APP_ENV` | `production` |
-| `DATABASE_URL` | Your Render PostgreSQL **internal** URL, changing the prefix from `postgresql://` to `postgresql+psycopg://` |
-| `REDIS_URL` | Your Render Key Value internal Redis URL |
-| `JWT_SECRET` | A distinct random secret of at least 32 characters |
-| `JWT_REFRESH_SECRET` | A different random secret of at least 32 characters |
-| `COOKIE_SECURE` | `true` |
-| `CORS_ORIGINS` | Your exact Vercel URL, for example `https://your-app.vercel.app` |
-| `ALLOWED_HOSTS` | `shieldsphere-api.onrender.com` and any configured API custom domain, comma-separated |
-| `WEBAUTHN_RP_ID` | The hostname of the frontend where passkeys are used, for example `your-app.vercel.app` |
-| `WEBAUTHN_ORIGIN` | The exact frontend origin, for example `https://your-app.vercel.app` |
-| `TRUSTED_PROXY_NETWORKS` | Configure the trusted reverse-proxy network required by your deployment policy |
-| `SANDBOX_NETWORK_INTERNET_EGRESS` | `false` |
-| `API_DOCS_ENABLED` | `false` |
-| `GROQ_API_KEY`, `VIRUSTOTAL_API_KEY`, `ABUSEIPDB_API_KEY` | Optional provider keys, if those features are enabled |
-| `SMTP_*` | Optional; set all SMTP fields together only when email delivery is enabled |
-
-5. Deploy, wait for the health check to pass, then copy the HTTPS API URL, such as `https://shieldsphere-api.onrender.com`.
-6. In Vercel, update and redeploy the frontend with:
+Deploy the Vite frontend to Vercel and configure environment variables pointing to your deployed backend:
 
 ```dotenv
-VITE_API_ORIGIN=https://shieldsphere-api.onrender.com
-VITE_API_BASE_URL=https://shieldsphere-api.onrender.com/api/v1
-VITE_SIMULATOR_WS_URL=wss://shieldsphere-api.onrender.com/api/v1/simulator/ws
+VITE_API_ORIGIN=https://shieldsphere-enterprise-account-security.onrender.com
+VITE_API_BASE_URL=https://shieldsphere-enterprise-account-security.onrender.com/api/v1
+VITE_SIMULATOR_WS_URL=wss://shieldsphere-enterprise-account-security.onrender.com/api/v1/simulator/ws
 ```
 
-7. Update `CORS_ORIGINS`, `ALLOWED_HOSTS`, and WebAuthn variables if you later attach custom domains. Sign in again after the deployment and verify `/health` plus a normal API action.
-
-**Render limitation for the simulator:** the Render API service is appropriate for the dashboard, authentication, reports, AI, and normal detection workflows. The Docker attack simulator needs a controlled Docker daemon capable of creating isolated containers. Run that component on a separate dedicated simulator host or worker; do not try to expose a host Docker socket through the public Render API service.
-
-If you intentionally deploy only the API features that do not require sandbox runs, Python 3 is possible with a build command such as `pip install -r requirements.txt` and a FastAPI start command. Docker is the correct choice for this repository because it supplies the required OS packages and matches the included production container.
-
-### Full backend and simulator
-
-The FastAPI API, PostgreSQL, Redis, scheduler, and Docker simulator need a Docker-capable server; they cannot run as ordinary Vercel frontend functions. The included production configuration uses Caddy for HTTPS, Nginx for the SPA, and a non-root FastAPI service.
-
-```powershell
-# Create a production-only secret file; do not commit it.
-Copy-Item backend\.env.example backend\.env.production
-
-# Validate the production prerequisites.
-.\scripts\deploy-production.ps1 -ValidateOnly
-
-# Build and start the production stack.
-.\scripts\deploy-production.ps1
-```
-
-For the Docker simulator, use a dedicated simulator host or the explicit `-EnableSimulator` deployment option. Keep `SANDBOX_NETWORK_INTERNET_EGRESS=false`.
-
-## Security notes
-
-- Keep `.env`, `.env.production`, database backups, private keys, and GeoLite2 license files out of Git.
-- Use long, independent secrets for JWT, PostgreSQL, Redis, SMTP, and webhook signing.
-- Use HTTPS in production. Webhooks are HMAC-SHA256 signed and public endpoints are SSRF-validated.
-- Docker socket access is highly privileged. Do not expose it to a public-facing application host without strong isolation.
-- Run a single embedded scheduler instance unless you add a distributed lock or separate worker architecture.
-- Treat simulator findings as exercises. They are deliberately separated from real account-security scoring.
+Follow the full guide in [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md).
 
 ---
 
+### ⚡ Deploy the Backend on Render
+
+> **Recommended runtime: Docker.** The backend installs OS packages (Nmap, libpcap) via Dockerfile.
+
+**Step 1:** Push to GitHub → sign in to [Render](https://render.com)
+
+**Step 2:** Create a **PostgreSQL** database and **Key Value** (Redis) instance in the same region
+
+**Step 3:** Create a **Web Service** with these settings:
+
+| Render Setting | Value |
+|:---------------|:------|
+| Name | `shieldsphere-api` |
+| Region | Same as PostgreSQL and Key Value |
+| Branch | `main` |
+| Language | **Docker** |
+| Root Directory | `backend` |
+| Dockerfile Path | `./Dockerfile` |
+| Health Check Path | `/health` |
+| Auto-Deploy | Enable on push |
+
+**Step 4:** Add environment variables:
+
+| Variable | Production Value |
+|:---------|:----------------|
+| `APP_ENV` | `production` |
+| `DATABASE_URL` | Render PostgreSQL internal URL (change prefix to `postgresql+psycopg://`) |
+| `REDIS_URL` | Render Key Value internal Redis URL |
+| `JWT_SECRET` | Random secret ≥ 32 characters |
+| `JWT_REFRESH_SECRET` | Different random secret ≥ 32 characters |
+| `COOKIE_SECURE` | `true` |
+| `CORS_ORIGINS` | Your exact Vercel URL |
+| `ALLOWED_HOSTS` | `shieldsphere-api.onrender.com` |
+| `WEBAUTHN_RP_ID` | Frontend hostname |
+| `WEBAUTHN_ORIGIN` | Exact frontend HTTPS origin |
+| `SANDBOX_NETWORK_INTERNET_EGRESS` | `false` |
+| `API_DOCS_ENABLED` | `false` |
+| `GROQ_API_KEY`, `VIRUSTOTAL_API_KEY`, `ABUSEIPDB_API_KEY` | Optional provider keys |
+
+**Step 5:** Deploy, wait for health check to pass.
+
+> **⚠️ Render Simulator Limitation:** The Docker attack simulator requires a host Docker daemon capable of creating isolated containers. Run the simulator component on a dedicated host — do not expose the host Docker socket through the public Render API service.
+
+---
+
+### 🐳 Full Backend + Simulator (Self-Hosted)
+
+```powershell
+# Create a production-only secret file (never commit)
+Copy-Item backend\.env.example backend\.env.production
+
+# Validate production prerequisites
+.\scripts\deploy-production.ps1 -ValidateOnly
+
+# Build and start the full production stack
+.\scripts\deploy-production.ps1
+```
+
+---
+
+## 🔒 Security Notes
+
+```
+╔═══════════════════════════════════════════════════════════════════╗
+║                    ⚠️  SECURITY CHECKLIST                         ║
+╠═══════════════════════════════════════════════════════════════════╣
+║  ✅ Keep .env, .env.production, DB backups & private keys out     ║
+║     of Git at all times                                           ║
+║  ✅ Use long, independent secrets for JWT, PostgreSQL, Redis,     ║
+║     SMTP, and webhook signing                                      ║
+║  ✅ Always use HTTPS in production                                 ║
+║  ✅ Webhooks are HMAC-SHA256 signed; public endpoints are         ║
+║     SSRF-validated                                                 ║
+║  ✅ Docker socket access is highly privileged — never expose it   ║
+║     to a public-facing application host without strong isolation  ║
+║  ✅ Run a single embedded scheduler unless using distributed locks║
+║  ✅ Simulator findings are exercises — they are deliberately      ║
+║     separated from real account-security scoring                  ║
+╚═══════════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+```
+MIT License — Copyright (c) 2024 ShieldSphere
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+```
+
+---
+
+<!-- ╔══════════════════════════════════════════════════════════════════════╗ -->
+<!--                           ANIMATED FOOTER                              -->
+<!-- ╚══════════════════════════════════════════════════════════════════════╝ -->
+
 <div align="center">
 
-Built for clear, actionable account security.  
-**ShieldSphere — protect, understand, and validate your defenses.**
+---
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=footer&text=ShieldSphere&fontSize=42&fontColor=00D9FF&animation=twinkling&fontAlignY=65&desc=Protect%20%E2%80%A2%20Detect%20%E2%80%A2%20Respond%20%E2%80%A2%20Validate&descAlignY=82&descColor=8b9ec8" alt="ShieldSphere Footer" width="100%" />
+
+<br>
+
+<img src="https://readme-typing-svg.demolab.com?font=Rajdhani&weight=700&size=22&pause=3000&color=00D9FF&center=true&vCenter=true&repeat=true&width=800&height=45&lines=Built+for+clear%2C+actionable+account+security.;ShieldSphere+—+Protect%2C+Understand%2C+and+Validate+Your+Defenses." alt="Footer tagline" />
+
+<br>
+
+[![Frontend](https://img.shields.io/badge/🌐%20Frontend-Live-000000?style=for-the-badge&logo=vercel)](https://shield-sphere-enterprise-account-se.vercel.app/)
+&nbsp;
+[![Backend](https://img.shields.io/badge/⚡%20Backend-Live-46a2f1?style=for-the-badge&logo=render)](https://shieldsphere-enterprise-account-security.onrender.com)
+&nbsp;
+[![License](https://img.shields.io/badge/📜%20License-MIT-green?style=for-the-badge)](LICENSE)
+
+<br>
+
+*© 2024 ShieldSphere · Enterprise Account Security Platform · MIT License*
 
 </div>
