@@ -157,27 +157,37 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 
 <div align="center">
 
-```
-╔═══════════════════════════════════════════════════════════════════╗
-║                    SHIELDSPHERE — DEPLOYED LINKS                  ║
-╠═══════════════════════════════════════════════════════════════════╣
-║  🌐 Frontend   https://shield-sphere-enterprise-account-se.       ║
-║                vercel.app/                                        ║
-║  ⚡ Backend    https://shieldsphere-enterprise-account-           ║
-║                security.onrender.com                              ║
-║  📖 API Docs   https://shieldsphere-enterprise-account-           ║
-║                security.onrender.com/docs                         ║
-║  ❤️ Health     https://shieldsphere-enterprise-account-           ║
-║                security.onrender.com/health                       ║
-╚═══════════════════════════════════════════════════════════════════╝
-```
-
-| Service | URL | Status |
-|:-------:|:----|:------:|
-| 🌐 **Frontend** | [shield-sphere-enterprise-account-se.vercel.app](https://shield-sphere-enterprise-account-se.vercel.app/) | ![Vercel](https://img.shields.io/badge/Live-✓-brightgreen?style=flat-square) |
-| ⚡ **Backend API** | [shieldsphere-enterprise-account-security.onrender.com](https://shieldsphere-enterprise-account-security.onrender.com) | ![Render](https://img.shields.io/badge/Live-✓-brightgreen?style=flat-square) |
-| 📖 **Swagger UI** | [.../docs](https://shieldsphere-enterprise-account-security.onrender.com/docs) | ![Docs](https://img.shields.io/badge/Docs-✓-0ea5e9?style=flat-square) |
-| ❤️ **Health Check** | [.../health](https://shieldsphere-enterprise-account-security.onrender.com/health) | ![Health](https://img.shields.io/badge/Healthy-✓-10b981?style=flat-square) |
+<table>
+  <thead>
+    <tr>
+      <th>🏷️ Service</th>
+      <th>🔗 URL</th>
+      <th>📊 Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">🌐 <strong>Frontend</strong></td>
+      <td><a href="https://shield-sphere-enterprise-account-se.vercel.app/">shield-sphere-enterprise-account-se.vercel.app</a></td>
+      <td align="center"><img src="https://img.shields.io/badge/Live-✓-brightgreen?style=flat-square" alt="Live" /></td>
+    </tr>
+    <tr>
+      <td align="center">⚡ <strong>Backend API</strong></td>
+      <td><a href="https://shieldsphere-enterprise-account-security.onrender.com">shieldsphere-enterprise-account-security.onrender.com</a></td>
+      <td align="center"><img src="https://img.shields.io/badge/Live-✓-brightgreen?style=flat-square" alt="Live" /></td>
+    </tr>
+    <tr>
+      <td align="center">📖 <strong>Swagger / API Docs</strong></td>
+      <td><a href="https://shieldsphere-enterprise-account-security.onrender.com/docs">…/docs</a></td>
+      <td align="center"><img src="https://img.shields.io/badge/Docs-✓-0ea5e9?style=flat-square" alt="Docs" /></td>
+    </tr>
+    <tr>
+      <td align="center">❤️ <strong>Health Check</strong></td>
+      <td><a href="https://shieldsphere-enterprise-account-security.onrender.com/health">…/health</a></td>
+      <td align="center"><img src="https://img.shields.io/badge/Healthy-✓-10b981?style=flat-square" alt="Healthy" /></td>
+    </tr>
+  </tbody>
+</table>
 
 </div>
 
@@ -188,7 +198,7 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 ### 🔐 Identity & Access Protection
 
 <div align="center">
-<img src="docs/assets/shieldsphere-security-tools.png" alt="Security Tools — Password Breach Checker, URL Phishing Scanner, IP Reputation Checker" width="90%" />
+<img src="docs/assets/shieldsphere-security-assessment.png" alt="Security Tools — Password Breach Checker, URL Phishing Scanner, IP Reputation Checker" width="100%" style="max-height:320px; object-fit:cover;" />
 </div>
 
 <br>
@@ -208,7 +218,7 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 ### 📡 Threat Detection, Alerts & Response
 
 <div align="center">
-<img src="docs/assets/shieldsphere-threat-monitoring.png" alt="Enterprise Threat Monitoring — Real-time alerts and world map" width="90%" />
+<img src="docs/assets/shieldsphere-threat-monitoring.png" alt="Enterprise Threat Monitoring — Real-time alerts and world map" width="100%" style="max-height:320px; object-fit:cover;" />
 </div>
 
 <br>
@@ -229,7 +239,7 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 ### 🧠 Intelligence & Assessment
 
 <div align="center">
-<img src="docs/assets/shieldsphere-security-assessment.png" alt="Security Assessment Tools — Password Breach, URL Phishing, IP Reputation" width="90%" />
+<img src="docs/assets/shieldsphere-security-assessment.png" alt="Security Assessment Tools — Password Breach, URL Phishing, IP Reputation" width="100%" style="max-height:320px; object-fit:cover;" />
 </div>
 
 <br>
@@ -245,40 +255,62 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 
 ### 🧪 Safe Security Validation (Attack Sandbox)
 
-```
- ┌─────────────────────────────────────────────────────────────────┐
- │                  DOCKER ISOLATED SANDBOX                        │
- │                                                                 │
- │  ┌──────────────┐   isolated bridge   ┌───────────────────────┐ │
- │  │  🔴 Attacker │ ──────────────────► │  🎯 Vulnerable Target │ │
- │  │   Container  │    (no internet)    │   (Flask + SQLite)    │ │
- │  └──────┬───────┘                     └───────────────────────┘ │
- │         │ events via WebSocket                                   │
- │         ▼                                                        │
- │  ┌──────────────────────────────────┐                           │
- │  │  🛡 ShieldSphere Detection Engine │                           │
- │  │  Threats • Alerts • Score        │                           │
- │  └──────────────────────────────────┘                           │
- └─────────────────────────────────────────────────────────────────┘
-```
+<div align="center">
 
-| Simulation Type | What It Tests | Isolation |
-|:----------------|:-------------|:----------|
-| 💥 Brute Force | Auth failure detection & auto-blocking | ✅ Docker sandbox |
-| 💉 SQL Injection | Vulnerable endpoint exploitation | ✅ Docker sandbox |
-| 🕷 XSS Attack | Reflected payload detection | ✅ Docker sandbox |
-| 🔭 Port Discovery | Open-port service scanning (Nmap) | ✅ Docker sandbox |
-| 🔬 Vulnerability Scan | HTTP header security analysis | ✅ Docker sandbox |
-| 📦 Packet Capture | Scapy live traffic capture + AI analysis | ✅ Docker sandbox |
-| 🎣 Phishing Simulation | Domain-distance awareness training | ✅ Docker sandbox |
-| 🤝 Social Engineering | AI-generated scenario + scored response | ✅ Docker sandbox |
+<table>
+  <thead>
+    <tr>
+      <th colspan="3">🐳 Docker Isolated Sandbox Architecture</th>
+    </tr>
+    <tr>
+      <th>🔴 Attacker Container</th>
+      <th>→</th>
+      <th>🎯 Vulnerable Target (Flask + SQLite)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center" colspan="3"><em>Isolated bridge network · No internet egress · Events via WebSocket</em></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="3">⬇️</td>
+    </tr>
+    <tr>
+      <td align="center" colspan="3">🛡️ <strong>ShieldSphere Detection Engine</strong> — Threats · Alerts · Score</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+<table>
+  <thead>
+    <tr>
+      <th>🎯 Simulation Type</th>
+      <th>🔍 What It Tests</th>
+      <th>🔒 Isolation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>💥 Brute Force</td><td>Auth failure detection &amp; auto-blocking</td><td align="center">✅ Docker sandbox</td></tr>
+    <tr><td>💉 SQL Injection</td><td>Vulnerable endpoint exploitation</td><td align="center">✅ Docker sandbox</td></tr>
+    <tr><td>🕷️ XSS Attack</td><td>Reflected payload detection</td><td align="center">✅ Docker sandbox</td></tr>
+    <tr><td>🔭 Port Discovery</td><td>Open-port service scanning (Nmap)</td><td align="center">✅ Docker sandbox</td></tr>
+    <tr><td>🔬 Vulnerability Scan</td><td>HTTP header security analysis</td><td align="center">✅ Docker sandbox</td></tr>
+    <tr><td>📦 Packet Capture</td><td>Scapy live traffic capture + AI analysis</td><td align="center">✅ Docker sandbox</td></tr>
+    <tr><td>🎣 Phishing Simulation</td><td>Domain-distance awareness training</td><td align="center">✅ Docker sandbox</td></tr>
+    <tr><td>🤝 Social Engineering</td><td>AI-generated scenario + scored response</td><td align="center">✅ Docker sandbox</td></tr>
+  </tbody>
+</table>
+
+</div>
 
 ---
 
 ### 📋 Compliance & Integrations
 
 <div align="center">
-<img src="docs/assets/shieldsphere-compliance-dashboard.png" alt="GDPR Compliance Dashboard" width="80%" />
+<img src="docs/assets/shieldsphere-compliance-dashboard.png" alt="GDPR Compliance Dashboard" width="100%" style="max-height:320px; object-fit:cover;" />
 </div>
 
 <br>
@@ -296,7 +328,7 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 
 <div align="center">
 
-<img src="docs/assets/shieldsphere-architecture-ai.png" alt="ShieldSphere System Architecture — React+Vite → FastAPI → PostgreSQL, Redis, AI Engine, Docker Sandbox, GeoIP, Integrations" width="100%" />
+<img src="docs/assets/shieldsphere-architecture-ai.png" alt="ShieldSphere System Architecture — React+Vite → FastAPI → PostgreSQL, Redis, AI Engine, Docker Sandbox, GeoIP, Integrations" width="100%" style="max-height:400px; object-fit:cover;" />
 
 </div>
 
@@ -304,43 +336,91 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 
 <div align="center">
 
-| Component | Role | Technology |
-|:----------|:-----|:-----------|
-| ⚛️ **React + Vite Frontend** | Responsive dashboard, security controls, maps, simulator replay, report downloads | React, TypeScript, Vite, TanStack, Leaflet |
-| ⚡ **FastAPI Backend** | Authenticated REST API, SSE Copilot stream, WebSocket simulator feed, security workflows | Python 3.12+, FastAPI, Uvicorn, Pydantic |
-| 🐘 **PostgreSQL** | Persistent users, login history, sessions, devices, threats, alerts, reports, audits | SQLAlchemy async, Alembic, psycopg3 |
-| 🟥 **Redis** | Fast rate limiting, blocklist synchronization, short-lived security coordination | redis-py, hiredis, SlowAPI |
-| 🧠 **Detection Services** | Behavioural analytics, threat recording, security-score calculation, automated blocking | UBA Engine, APScheduler |
-| 🐳 **Docker Simulator** | Disposable, isolated attack environment — controlled exercises only | Docker SDK, Flask target, Scapy, Nmap |
-| 🔌 **External Integrations** | AI, reputation intelligence, GeoIP, signed webhooks, optional email | Groq, VirusTotal, AbuseIPDB, MaxMind |
+<table>
+  <thead>
+    <tr>
+      <th align="center">🧩 Component</th>
+      <th align="center">🎯 Role</th>
+      <th align="center">⚙️ Technology</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">⚛️ <strong>React + Vite Frontend</strong></td>
+      <td>Responsive dashboard, security controls, maps, simulator replay, report downloads</td>
+      <td align="center">React, TypeScript, Vite, TanStack, Leaflet</td>
+    </tr>
+    <tr>
+      <td align="center">⚡ <strong>FastAPI Backend</strong></td>
+      <td>Authenticated REST API, SSE Copilot stream, WebSocket simulator feed, security workflows</td>
+      <td align="center">Python 3.12+, FastAPI, Uvicorn, Pydantic</td>
+    </tr>
+    <tr>
+      <td align="center">🐘 <strong>PostgreSQL</strong></td>
+      <td>Persistent users, login history, sessions, devices, threats, alerts, reports, audits</td>
+      <td align="center">SQLAlchemy async, Alembic, psycopg3</td>
+    </tr>
+    <tr>
+      <td align="center">🟥 <strong>Redis</strong></td>
+      <td>Fast rate limiting, blocklist synchronization, short-lived security coordination</td>
+      <td align="center">redis-py, hiredis, SlowAPI</td>
+    </tr>
+    <tr>
+      <td align="center">🧠 <strong>Detection Services</strong></td>
+      <td>Behavioural analytics, threat recording, security-score calculation, automated blocking</td>
+      <td align="center">UBA Engine, APScheduler</td>
+    </tr>
+    <tr>
+      <td align="center">🐳 <strong>Docker Simulator</strong></td>
+      <td>Disposable, isolated attack environment — controlled exercises only</td>
+      <td align="center">Docker SDK, Flask target, Scapy, Nmap</td>
+    </tr>
+    <tr>
+      <td align="center">🔌 <strong>External Integrations</strong></td>
+      <td>AI, reputation intelligence, GeoIP, signed webhooks, optional email</td>
+      <td align="center">Groq, VirusTotal, AbuseIPDB, MaxMind</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3" align="center">🏗️ System Architecture Flow</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3" align="center">👤 <strong>Account User</strong> (HTTPS)</td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center">⬇️</td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center">⚛️ <strong>React + Vite Dashboard</strong> (cookies / SSE / WebSocket)</td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center">⬇️</td>
+    </tr>
+    <tr>
+      <td colspan="3" align="center">⚡ <strong>FastAPI API</strong></td>
+    </tr>
+    <tr>
+      <td align="center">🐘 <strong>PostgreSQL</strong><br/><em>(records)</em></td>
+      <td align="center">🟥 <strong>Redis</strong><br/><em>(rate limits)</em></td>
+      <td align="center">🧠 <strong>Detection &amp; UBA Engine</strong></td>
+    </tr>
+    <tr>
+      <td align="center">🌍 <strong>GeoIP</strong><br/><em>Location</em></td>
+      <td align="center">🔎 <strong>AI / Rep Providers</strong></td>
+      <td align="center">🐳 <strong>Docker Simulator</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 </div>
-
-```
-                        ╔════════════════════╗
-                        ║  👤 Account User   ║
-                        ╚═════════╤══════════╝
-                                  │ HTTPS
-                        ╔═════════▼══════════╗
-                        ║  ⚛️ React + Vite   ║
-                        ║     Dashboard      ║
-                        ╚═════════╤══════════╝
-                     cookies/SSE/WebSocket
-                        ╔═════════▼══════════╗
-              ┌─────────║  ⚡ FastAPI API    ║─────────┐
-              │         ╚═════════╤══════════╝         │
-              │                   │                    │
-    ╔═════════▼═══╗    ╔══════════▼═════╗    ╔════════▼═══════╗
-    ║ 🐘 PostgreSQL║    ║  🟥 Redis      ║    ║ 🧠 Detection   ║
-    ║  (records)   ║    ║  (rate limits) ║    ║  & UBA Engine  ║
-    ╚═════════════╝    ╚════════════════╝    ╚════════╤═══════╝
-                                                      │
-              ┌───────────┬────────────┬──────────────┘
-    ╔═════════▼═╗  ╔══════▼═════╗  ╔══▼═════════════╗
-    ║ 🌍 GeoIP   ║  ║ 🔎 AI/Rep  ║  ║ 🐳 Docker      ║
-    ║  Location  ║  ║  Providers ║  ║   Simulator    ║
-    ╚═══════════╝  ╚════════════╝  ╚════════════════╝
-```
 
 ---
 
@@ -349,40 +429,84 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 ### Security Event Flow
 
 <div align="center">
-<img src="docs/assets/shieldsphere-api-lifecycle.png" alt="ShieldSphere API Request Lifecycle — from client request through rate limiting, JWT auth, detection engine, to dashboard update" width="100%" />
+<img src="docs/assets/shieldsphere-api-lifecycle.png" alt="ShieldSphere API Request Lifecycle — from client request through rate limiting, JWT auth, detection engine, to dashboard update" width="100%" style="max-height:380px; object-fit:cover;" />
 </div>
 
 <br>
 
-```
- 👤 User / Device          ⚡ ShieldSphere API        🧠 Detection Engine
-        │                          │                          │
-        │── Sign-in attempt ───────►│                          │
-        │                          │── Record login, session ─►│
-        │                          │── Evaluate rules & signals►│
-        │                          │                          │── Create threat/alert
-        │                          │◄── Updated security state─│
-        │◄── Explain risk + action ─│                          │
-        │                          │                          │
-        │── Revoke/Block/Secure ───►│                          │
-        │                          │── Preserve evidence ─────►│
-        │                          │── Update security score ──►│
-```
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th align="center">👤 User / Device</th>
+      <th align="center">⚡ ShieldSphere API</th>
+      <th align="center">🧠 Detection Engine</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sign-in attempt ➡️</td>
+      <td>Record login, session</td>
+      <td>Evaluate rules &amp; signals</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>➡️ Create threat / alert</td>
+    </tr>
+    <tr>
+      <td>⬅️ Explain risk + action</td>
+      <td>⬅️ Updated security state</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Revoke / Block / Secure ➡️</td>
+      <td>Preserve evidence ➡️<br/>Update security score ➡️</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 ### API Request Lifecycle
 
-```
-  Client              Rate         JWT          FastAPI        Detection         DB/Cache
-  Request  ─────────► Limiter ───► Auth ──────► Router ──────► Engine  ────────► Write
-    │         HTTPS    │            │             │               │                │
-    │                  │            │             │               │◄── AI RCA ─────┤
-    │                  │            │             │               │                │
-    │◄──────────────────────────────────── SSE / WebSocket Response ───────────────┘
-```
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th align="center">📤 Client Request</th>
+      <th align="center">🚦 Rate Limiter</th>
+      <th align="center">🔑 JWT Auth</th>
+      <th align="center">🔀 FastAPI Router</th>
+      <th align="center">🧠 Detection Engine</th>
+      <th align="center">🗄️ DB / Cache Write</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">HTTPS ➡️</td>
+      <td align="center">➡️</td>
+      <td align="center">➡️</td>
+      <td align="center">➡️</td>
+      <td align="center">➡️<br/>⬅️ AI RCA</td>
+      <td align="center">Write</td>
+    </tr>
+    <tr>
+      <td colspan="6" align="center">⬅️ SSE / WebSocket Response streamed back to client</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 ---
 
 ## 💻 Technology Stack
+
+<div align="center">
 
 ### 🎨 Frontend
 
@@ -454,21 +578,31 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
   <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
 </p>
 
+</div>
+
 ### Full Stack Overview Table
 
 <div align="center">
 
-| Layer | Technologies |
-|:------|:-------------|
-| **Frontend** | React, TypeScript, Vite, TanStack Router, TanStack Query, Tailwind CSS, shadcn/ui, Leaflet |
-| **Backend** | Python 3.12+, FastAPI, Pydantic v2, SQLAlchemy async, Alembic, Uvicorn, structlog, SlowAPI |
-| **Data & Cache** | PostgreSQL, Redis, psycopg3, APScheduler |
-| **Security** | HTTP-only cookies, JWT, TOTP, WebAuthn, HMAC-SHA256 webhook signing, CSP/HSTS, rate limiting |
-| **Intelligence** | Groq AI, VirusTotal, AbuseIPDB, MaxMind GeoLite2 City, HIBP, zxcvbn |
-| **Realtime** | Server-Sent Events (SSE), WebSockets |
-| **Simulation** | Docker SDK, Flask+SQLite target, Python requests, Scapy, python-nmap/Nmap |
-| **Reports** | ReportLab PDF generation, openpyxl multi-sheet Excel export |
-| **Deployment** | Vercel (frontend), Render (backend), Docker, Caddy, Nginx |
+<table>
+  <thead>
+    <tr>
+      <th align="center">🏗️ Layer</th>
+      <th align="center">⚙️ Technologies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td align="center"><strong>Frontend</strong></td><td align="center">React, TypeScript, Vite, TanStack Router, TanStack Query, Tailwind CSS, shadcn/ui, Leaflet</td></tr>
+    <tr><td align="center"><strong>Backend</strong></td><td align="center">Python 3.12+, FastAPI, Pydantic v2, SQLAlchemy async, Alembic, Uvicorn, structlog, SlowAPI</td></tr>
+    <tr><td align="center"><strong>Data &amp; Cache</strong></td><td align="center">PostgreSQL, Redis, psycopg3, APScheduler</td></tr>
+    <tr><td align="center"><strong>Security</strong></td><td align="center">HTTP-only cookies, JWT, TOTP, WebAuthn, HMAC-SHA256 webhook signing, CSP/HSTS, rate limiting</td></tr>
+    <tr><td align="center"><strong>Intelligence</strong></td><td align="center">Groq AI, VirusTotal, AbuseIPDB, MaxMind GeoLite2 City, HIBP, zxcvbn</td></tr>
+    <tr><td align="center"><strong>Realtime</strong></td><td align="center">Server-Sent Events (SSE), WebSockets</td></tr>
+    <tr><td align="center"><strong>Simulation</strong></td><td align="center">Docker SDK, Flask+SQLite target, Python requests, Scapy, python-nmap/Nmap</td></tr>
+    <tr><td align="center"><strong>Reports</strong></td><td align="center">ReportLab PDF generation, openpyxl multi-sheet Excel export</td></tr>
+    <tr><td align="center"><strong>Deployment</strong></td><td align="center">Vercel (frontend), Render (backend), Docker, Caddy, Nginx</td></tr>
+  </tbody>
+</table>
 
 </div>
 
@@ -752,24 +886,47 @@ Copy-Item backend\.env.example backend\.env.production
 
 ## 🔒 Security Notes
 
-```
-╔═══════════════════════════════════════════════════════════════════╗
-║                    ⚠️  SECURITY CHECKLIST                         ║
-╠═══════════════════════════════════════════════════════════════════╣
-║  ✅ Keep .env, .env.production, DB backups & private keys out     ║
-║     of Git at all times                                           ║
-║  ✅ Use long, independent secrets for JWT, PostgreSQL, Redis,     ║
-║     SMTP, and webhook signing                                      ║
-║  ✅ Always use HTTPS in production                                 ║
-║  ✅ Webhooks are HMAC-SHA256 signed; public endpoints are         ║
-║     SSRF-validated                                                 ║
-║  ✅ Docker socket access is highly privileged — never expose it   ║
-║     to a public-facing application host without strong isolation  ║
-║  ✅ Run a single embedded scheduler unless using distributed locks║
-║  ✅ Simulator findings are exercises — they are deliberately      ║
-║     separated from real account-security scoring                  ║
-╚═══════════════════════════════════════════════════════════════════╝
-```
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="2" align="center">⚠️ Security Checklist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center">✅</td>
+      <td>Keep <code>.env</code>, <code>.env.production</code>, DB backups &amp; private keys out of Git at all times</td>
+    </tr>
+    <tr>
+      <td align="center">✅</td>
+      <td>Use long, independent secrets for JWT, PostgreSQL, Redis, SMTP, and webhook signing</td>
+    </tr>
+    <tr>
+      <td align="center">✅</td>
+      <td>Always use HTTPS in production</td>
+    </tr>
+    <tr>
+      <td align="center">✅</td>
+      <td>Webhooks are HMAC-SHA256 signed; public endpoints are SSRF-validated</td>
+    </tr>
+    <tr>
+      <td align="center">✅</td>
+      <td>Docker socket access is highly privileged — never expose it to a public-facing application host without strong isolation</td>
+    </tr>
+    <tr>
+      <td align="center">✅</td>
+      <td>Run a single embedded scheduler unless using distributed locks</td>
+    </tr>
+    <tr>
+      <td align="center">✅</td>
+      <td>Simulator findings are exercises — they are deliberately separated from real account-security scoring</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 ---
 
@@ -809,7 +966,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=Rajdhani&weight=700&size=22&pause=3000&color=00D9FF&center=true&vCenter=true&repeat=true&width=800&height=45&lines=Built+for+clear%2C+actionable+account+security.;ShieldSphere+—+Protect%2C+Understand%2C+and+Validate+Your+Defenses." alt="Footer tagline" />
+<p align="center"><em>Built for clear, actionable account security. &nbsp;|&nbsp; ShieldSphere — Protect, Understand, and Validate Your Defenses.</em></p>
 
 <br>
 
