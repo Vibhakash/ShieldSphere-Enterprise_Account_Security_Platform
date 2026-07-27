@@ -85,6 +85,17 @@ class Settings(BaseSettings):
         return [origin.strip() for origin in self.CORS_ORIGINS.split(",")]
 
     @property
+    def cors_allow_all_origins(self) -> bool:
+        """Whether CORS should reflect every requesting origin.
+
+        ``allow_origins=["*"]`` cannot be used with credentialed requests:
+        browsers reject that combination.  The middleware uses this flag to
+        reflect the caller's Origin header instead, so cookie-based login still
+        works when an administrator deliberately chooses open CORS.
+        """
+        return self.cors_origins_list == ["*"]
+
+    @property
     def allowed_hosts_list(self) -> List[str]:
         return [host.strip() for host in self.ALLOWED_HOSTS.split(",") if host.strip()]
 
@@ -115,11 +126,10 @@ class Settings(BaseSettings):
 
         origins = self.cors_origins_list
         if not origins or any(
-            origin == "*"
-            or urlparse(origin).scheme != "https"
+            urlparse(origin).scheme != "https"
             or urlparse(origin).hostname in {"localhost", "127.0.0.1"}
             for origin in origins
-        ):
+        ) and not self.cors_allow_all_origins:
             errors.append("CORS_ORIGINS must contain only explicit public HTTPS origins")
         if not self.allowed_hosts_list or "*" in self.allowed_hosts_list:
             errors.append("ALLOWED_HOSTS must contain explicit hostnames and cannot use '*'")

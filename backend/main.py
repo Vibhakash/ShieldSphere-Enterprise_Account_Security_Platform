@@ -98,7 +98,11 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins_list,
+    # Reflect any Origin for CORS_ORIGINS="*" so credentialed authentication
+    # requests remain valid.  A literal wildcard is rejected by browsers when
+    # Access-Control-Allow-Credentials is enabled.
+    allow_origins=[] if settings.cors_allow_all_origins else settings.cors_origins_list,
+    allow_origin_regex=".*" if settings.cors_allow_all_origins else None,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -42,7 +42,6 @@ def test_valid_production_settings_are_accepted():
     [
         ("JWT_SECRET", "replace-me"),
         ("JWT_REFRESH_SECRET", "replace-me"),
-        ("CORS_ORIGINS", "*"),
         ("CORS_ORIGINS", "http://security.example.com"),
         ("WEBAUTHN_ORIGIN", "https://different.example.com"),
         ("COOKIE_SECURE", False),
@@ -52,6 +51,11 @@ def test_valid_production_settings_are_accepted():
 def test_unsafe_production_settings_are_rejected(field, value):
     with pytest.raises(ValidationError):
         _production_settings(**{field: value})
+
+
+def test_production_settings_can_explicitly_enable_open_cors():
+    production = _production_settings(CORS_ORIGINS="*")
+    assert production.cors_allow_all_origins is True
 
 
 def test_refresh_request_allows_http_only_cookie_flow():
