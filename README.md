@@ -197,10 +197,6 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 
 ### 🔐 Identity & Access Protection
 
-<div align="center">
-<img src="docs/assets/shieldsphere-security-assessment.png" alt="Security Tools — Password Breach Checker, URL Phishing Scanner, IP Reputation Checker" width="100%" style="max-height:320px; object-fit:cover;" />
-</div>
-
 <br>
 
 | Feature | Description | Technology |
@@ -237,6 +233,10 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 ---
 
 ### 🧠 Intelligence & Assessment
+
+<div align="center">
+<img src="docs/assets/shieldsphere-security-assessment.png" alt="Security Tools — Password Breach Checker, URL Phishing Scanner, IP Reputation Checker" width="100%" style="max-height:320px; object-fit:cover;" />
+</div>
 
 <br>
 
