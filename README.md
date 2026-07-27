@@ -256,52 +256,23 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 ### 🧪 Safe Security Validation (Attack Sandbox)
 
 <div align="center">
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3">🐳 Docker Isolated Sandbox Architecture</th>
-    </tr>
-    <tr>
-      <th>🔴 Attacker Container</th>
-      <th>→</th>
-      <th>🎯 Vulnerable Target (Flask + SQLite)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center" colspan="3"><em>Isolated bridge network · No internet egress · Events via WebSocket</em></td>
-    </tr>
-    <tr>
-      <td align="center" colspan="3">⬇️</td>
-    </tr>
-    <tr>
-      <td align="center" colspan="3">🛡️ <strong>ShieldSphere Detection Engine</strong> — Threats · Alerts · Score</td>
-    </tr>
-  </tbody>
-</table>
+<img src="docs/assets/shieldsphere-sandbox-workflow.png" alt="Docker Isolated Sandbox Architecture — Attacker Container → Vulnerable Target → ShieldSphere Detection Engine" width="100%" />
+</div>
 
 <br/>
 
-<table>
-  <thead>
-    <tr>
-      <th>🎯 Simulation Type</th>
-      <th>🔍 What It Tests</th>
-      <th>🔒 Isolation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>💥 Brute Force</td><td>Auth failure detection &amp; auto-blocking</td><td align="center">✅ Docker sandbox</td></tr>
-    <tr><td>💉 SQL Injection</td><td>Vulnerable endpoint exploitation</td><td align="center">✅ Docker sandbox</td></tr>
-    <tr><td>🕷️ XSS Attack</td><td>Reflected payload detection</td><td align="center">✅ Docker sandbox</td></tr>
-    <tr><td>🔭 Port Discovery</td><td>Open-port service scanning (Nmap)</td><td align="center">✅ Docker sandbox</td></tr>
-    <tr><td>🔬 Vulnerability Scan</td><td>HTTP header security analysis</td><td align="center">✅ Docker sandbox</td></tr>
-    <tr><td>📦 Packet Capture</td><td>Scapy live traffic capture + AI analysis</td><td align="center">✅ Docker sandbox</td></tr>
-    <tr><td>🎣 Phishing Simulation</td><td>Domain-distance awareness training</td><td align="center">✅ Docker sandbox</td></tr>
-    <tr><td>🤝 Social Engineering</td><td>AI-generated scenario + scored response</td><td align="center">✅ Docker sandbox</td></tr>
-  </tbody>
-</table>
+<div align="center">
+
+| 🎯 Simulation Type | 🔍 What It Tests | 🔒 Isolation |
+|:-------------------|:-----------------|:------------:|
+| 💥 Brute Force | Auth failure detection & auto-blocking | ✅ Docker sandbox |
+| 💉 SQL Injection | Vulnerable endpoint exploitation | ✅ Docker sandbox |
+| 🕷️ XSS Attack | Reflected payload detection | ✅ Docker sandbox |
+| 🔭 Port Discovery | Open-port service scanning (Nmap) | ✅ Docker sandbox |
+| 🔬 Vulnerability Scan | HTTP header security analysis | ✅ Docker sandbox |
+| 📦 Packet Capture | Scapy live traffic capture + AI analysis | ✅ Docker sandbox |
+| 🎣 Phishing Simulation | Domain-distance awareness training | ✅ Docker sandbox |
+| 🤝 Social Engineering | AI-generated scenario + scored response | ✅ Docker sandbox |
 
 </div>
 
@@ -385,40 +356,7 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 
 <br/>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3" align="center">🏗️ System Architecture Flow</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="3" align="center">👤 <strong>Account User</strong> (HTTPS)</td>
-    </tr>
-    <tr>
-      <td colspan="3" align="center">⬇️</td>
-    </tr>
-    <tr>
-      <td colspan="3" align="center">⚛️ <strong>React + Vite Dashboard</strong> (cookies / SSE / WebSocket)</td>
-    </tr>
-    <tr>
-      <td colspan="3" align="center">⬇️</td>
-    </tr>
-    <tr>
-      <td colspan="3" align="center">⚡ <strong>FastAPI API</strong></td>
-    </tr>
-    <tr>
-      <td align="center">🐘 <strong>PostgreSQL</strong><br/><em>(records)</em></td>
-      <td align="center">🟥 <strong>Redis</strong><br/><em>(rate limits)</em></td>
-      <td align="center">🧠 <strong>Detection &amp; UBA Engine</strong></td>
-    </tr>
-    <tr>
-      <td align="center">🌍 <strong>GeoIP</strong><br/><em>Location</em></td>
-      <td align="center">🔎 <strong>AI / Rep Providers</strong></td>
-      <td align="center">🐳 <strong>Docker Simulator</strong></td>
-    </tr>
-  </tbody>
-</table>
+<img src="docs/assets/shieldsphere-architecture-flow.png" alt="ShieldSphere System Architecture Flow — User → React Dashboard → FastAPI → PostgreSQL, Redis, Detection Engine → GeoIP, AI Providers, Docker Simulator" width="100%" />
 
 </div>
 
@@ -429,77 +367,13 @@ ShieldSphere is a full-stack platform that protects an account from sign-in thro
 ### Security Event Flow
 
 <div align="center">
-<img src="docs/assets/shieldsphere-api-lifecycle.png" alt="ShieldSphere API Request Lifecycle — from client request through rate limiting, JWT auth, detection engine, to dashboard update" width="100%" style="max-height:380px; object-fit:cover;" />
-</div>
-
-<br>
-
-<div align="center">
-
-<table>
-  <thead>
-    <tr>
-      <th align="center">👤 User / Device</th>
-      <th align="center">⚡ ShieldSphere API</th>
-      <th align="center">🧠 Detection Engine</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Sign-in attempt ➡️</td>
-      <td>Record login, session</td>
-      <td>Evaluate rules &amp; signals</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td>➡️ Create threat / alert</td>
-    </tr>
-    <tr>
-      <td>⬅️ Explain risk + action</td>
-      <td>⬅️ Updated security state</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Revoke / Block / Secure ➡️</td>
-      <td>Preserve evidence ➡️<br/>Update security score ➡️</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-
+<img src="docs/assets/shieldsphere-security-event-flow.png" alt="Security Event Flow — User Device → ShieldSphere API → Detection Engine → Threat Alert → Response" width="100%" />
 </div>
 
 ### API Request Lifecycle
 
 <div align="center">
-
-<table>
-  <thead>
-    <tr>
-      <th align="center">📤 Client Request</th>
-      <th align="center">🚦 Rate Limiter</th>
-      <th align="center">🔑 JWT Auth</th>
-      <th align="center">🔀 FastAPI Router</th>
-      <th align="center">🧠 Detection Engine</th>
-      <th align="center">🗄️ DB / Cache Write</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center">HTTPS ➡️</td>
-      <td align="center">➡️</td>
-      <td align="center">➡️</td>
-      <td align="center">➡️</td>
-      <td align="center">➡️<br/>⬅️ AI RCA</td>
-      <td align="center">Write</td>
-    </tr>
-    <tr>
-      <td colspan="6" align="center">⬅️ SSE / WebSocket Response streamed back to client</td>
-    </tr>
-  </tbody>
-</table>
-
+<img src="docs/assets/shieldsphere-api-request-lifecycle.png" alt="API Request Lifecycle — Client Request → Rate Limiter → JWT Auth → FastAPI Router → Detection Engine → DB/Cache → SSE Response" width="100%" />
 </div>
 
 ---
