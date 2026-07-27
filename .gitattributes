@@ -1,0 +1,11 @@
+* text=auto
+
+# Linux deployment/runtime files must keep LF endings when committed from Windows.
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+Caddyfile text eol=lf
+
+# Keep native Windows scripts convenient for local development.
+*.ps1 text eol=crlf

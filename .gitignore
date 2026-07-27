@@ -1,0 +1,53 @@
+# Secrets and local environment configuration
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# Python
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+backend/venv/
+
+# Node / frontend build
+node_modules/
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
+coverage/
+.tanstack/
+.vercel/
+
+# Local runtime output
+.run-logs/
+backend/.run-logs/
+*.log
+*.pid
+
+# Private keys, certificates, and local deployment state
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+caddy_data/
+caddy_config/
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+
+# MaxMind databases require a separate license/download
+backend/data/*.mmdb
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+.tanstack
+dist
+node_modules
+Dockerfile
+nginx.conf
+AGENTS.md
+*.log
+*.tsbuildinfo

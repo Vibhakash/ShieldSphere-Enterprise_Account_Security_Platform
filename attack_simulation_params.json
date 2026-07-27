@@ -1,0 +1,49 @@
+{
+  "brute_force": {
+    "attacker_ip": "198.51.100.23",
+    "attempts": 8,
+    "username": "sandbox-user"
+  },
+  "sqli": {
+    "target_url": "http://sandbox-target:5000",
+    "payloads": [
+      "' OR '1'='1' --",
+      "admin' --",
+      "' UNION SELECT 1,2,3 --"
+    ]
+  },
+  "xss": {
+    "target_url": "http://sandbox-target:5000",
+    "payloads": [
+      "<script>alert('sandbox-test')</script>",
+      "<img src=x onerror=alert('sandbox-test')>",
+      "\"><svg onload=alert('sandbox-test')>"
+    ]
+  },
+  "port_scan": {
+    "target": "sandbox-target",
+    "ports": "1-1024"
+  },
+  "vuln_scan": {},
+  "phishing": {
+    "urls": [
+      {
+        "url": "https://micros0ft.test/security-review",
+        "description": "Look-alike sign-in link"
+      },
+      {
+        "url": "https://microsoft.test/security-review",
+        "description": "Training control link"
+      }
+    ],
+    "legitimate_domains": [
+      "microsoft.test"
+    ]
+  },
+  "packet_capture": {
+    "duration_seconds": 5
+  },
+  "social_engineering": {
+    "user_role": "employee"
+  }
+}

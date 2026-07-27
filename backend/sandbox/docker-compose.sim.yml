@@ -1,0 +1,16 @@
+services:
+  target-app:
+    build: ./target_app
+    networks: [sandbox]
+  attacker-sim:
+    build: ./attacker_scripts
+    depends_on: [target-app]
+    environment:
+      SIM_TYPE: ${SIM_TYPE}
+      TARGET_URL: http://target-app:5000
+      SIM_PARAMS: ${SIM_PARAMS}
+    networks: [sandbox]
+
+networks:
+  sandbox:
+    internal: true

@@ -1,0 +1,20 @@
+services:
+  backend:
+    # Docker socket access is equivalent to host-root access. Use this override
+    # only on a dedicated simulator host, never on a shared application host.
+    user: "0:0"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    read_only: false
+
+  sandbox-target:
+    image: shieldsphere-target:latest
+    build:
+      context: ./backend/sandbox/target_app
+    profiles: ["sandbox-images"]
+
+  sandbox-attacker:
+    image: shieldsphere-attacker:latest
+    build:
+      context: ./backend/sandbox/attacker_scripts
+    profiles: ["sandbox-images"]
