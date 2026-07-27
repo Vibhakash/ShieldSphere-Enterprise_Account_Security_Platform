@@ -13,6 +13,19 @@ class Settings(BaseSettings):
     # Database
     DATABASE_URL: str
 
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def normalize_async_postgres_url(cls, value: str) -> str:
+        """Accept standard Postgres/Neon URLs with the async psycopg driver."""
+        url = str(value or "").strip().strip('"').strip("'")
+        if url.startswith("postgresql+psycopg://"):
+            return url
+        if url.startswith("postgresql://"):
+            return "postgresql+psycopg://" + url.removeprefix("postgresql://")
+        if url.startswith("postgres://"):
+            return "postgresql+psycopg://" + url.removeprefix("postgres://")
+        return url
+
     # Redis
     REDIS_URL: str = "redis://localhost:6379/0"
 

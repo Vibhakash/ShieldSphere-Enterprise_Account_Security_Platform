@@ -294,6 +294,23 @@ SMTP_FROM_EMAIL=
 SMTP_USE_TLS=true
 ```
 
+### Using Neon PostgreSQL
+
+Neon is fully compatible with ShieldSphere. In the Neon console, use **Connect** to copy the connection string for the database branch you want to use, then set it as `DATABASE_URL` in `backend/.env`. Keep `sslmode=require` in the copied URL. The application automatically converts Neon's standard `postgresql://` format to SQLAlchemy's asynchronous `postgresql+psycopg://` driver format.
+
+```dotenv
+DATABASE_URL=postgresql://<user>:<password>@<endpoint>.neon.tech/<database>?sslmode=require
+```
+
+Run the normal backend startup command once after changing the URL. It applies every Alembic migration before the API starts, creating the ShieldSphere tables in the selected Neon database:
+
+```powershell
+cd backend
+.\scripts\start.ps1
+```
+
+For long-running API deployments, prefer the direct Neon endpoint for migrations and this backend's `NullPool` connection model. Never commit the actual Neon connection URL; it includes the database password.
+
 ### Frontend (`frontend/.env`)
 
 ```dotenv
