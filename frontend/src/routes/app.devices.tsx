@@ -80,12 +80,12 @@ function DevicesPage() {
                       ) : (
                         <ShieldOff className="h-4 w-4 text-muted-foreground" />
                       )}
-                      <span className="truncate">
+                      <span className="min-w-0 break-words [overflow-wrap:anywhere]">
                         {d.browser ?? "Unknown browser"}
                         {d.os ? ` · ${d.os}` : ""}
                       </span>
                     </div>
-                    <div className="truncate text-xs text-muted-foreground">
+                    <div className="break-words text-xs text-muted-foreground [overflow-wrap:anywhere]">
                       Device ID: <span className="font-mono">{d.device_id}</span>
                     </div>
                     <div className="text-xs text-muted-foreground">Last IP: {d.last_ip ?? "—"}</div>

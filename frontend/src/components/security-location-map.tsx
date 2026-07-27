@@ -69,7 +69,7 @@ export function SecurityLocationMap({
                   }}
                 >
                   <Tooltip sticky direction="top" offset={[0, -8]} opacity={1}>
-                    <div className="min-w-64 max-w-80 space-y-3">
+                    <div className="w-80 max-w-full space-y-3">
                       <div>
                         <div className="font-semibold">{group.location}</div>
                         <div className="text-[11px] opacity-70">
@@ -89,7 +89,9 @@ export function SecurityLocationMap({
                                 className="grid grid-cols-[5rem_minmax(0,1fr)] gap-2"
                               >
                                 <dt className="opacity-65">{detail.label}</dt>
-                                <dd className="break-words">{detail.value}</dd>
+                                <dd className="min-w-0 break-words [overflow-wrap:anywhere]">
+                                  {detail.value}
+                                </dd>
                               </div>
                             ))}
                           </dl>

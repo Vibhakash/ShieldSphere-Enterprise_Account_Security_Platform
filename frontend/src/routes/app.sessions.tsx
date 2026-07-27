@@ -111,7 +111,7 @@ function SessionsPage() {
                 <CardContent className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3 py-4">
                   <div className="min-w-0 space-y-1 text-sm">
                     <div className="truncate font-mono text-xs">{s.ip_address ?? "—"}</div>
-                    <div className="truncate text-muted-foreground">
+                    <div className="break-words text-muted-foreground [overflow-wrap:anywhere]">
                       {s.user_agent ?? "Unknown agent"}
                     </div>
                     <div className="text-xs text-muted-foreground">

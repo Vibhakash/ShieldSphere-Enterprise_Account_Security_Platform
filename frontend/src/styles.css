@@ -310,6 +310,11 @@
   border-radius: var(--radius-md);
   color: var(--color-popover-foreground);
   box-shadow: 0 12px 35px color-mix(in oklch, var(--color-background) 55%, transparent);
+  /* Leaflet defaults to nowrap, which sends long user-agent strings outside
+     the map tooltip. Keep every field inside a responsive, readable panel. */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  max-width: min(20rem, calc(100vw - 2rem));
   padding: 0.75rem;
 }
 
