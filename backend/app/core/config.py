@@ -72,7 +72,16 @@ class Settings(BaseSettings):
         return str(path.resolve())
 
     # Sandbox
+    SIMULATOR_MODE: str = "docker"
     SANDBOX_NETWORK_INTERNET_EGRESS: bool = False
+
+    @field_validator("SIMULATOR_MODE")
+    @classmethod
+    def validate_simulator_mode(cls, value: str) -> str:
+        mode = value.strip().lower()
+        if mode not in {"docker", "synthetic"}:
+            raise ValueError("SIMULATOR_MODE must be either 'docker' or 'synthetic'")
+        return mode
 
     # App
     APP_ENV: str = "development"

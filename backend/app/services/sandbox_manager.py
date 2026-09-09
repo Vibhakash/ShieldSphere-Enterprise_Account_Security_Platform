@@ -39,6 +39,35 @@ def cleanup_event_queue(sim_id: str):
     _event_queues.pop(sim_id, None)
 
 
+class DockerSimulationProvider:
+    """Run the existing isolated-container simulator."""
+
+    async def run(self, simulation, queue, emit, db, redis_client) -> None:
+        if not await _check_docker_available():
+            raise RuntimeError(
+                "Docker is required when SIMULATOR_MODE=docker. "
+                "Set SIMULATOR_MODE=synthetic for the Render-safe simulator."
+            )
+        await _run_with_docker(simulation, queue, emit, db, redis_client)
+
+
+class SyntheticSimulationProvider:
+    """Run a safe, in-process replay without Docker or network activity."""
+
+    async def run(self, simulation, queue, emit, db, redis_client) -> None:
+        await _run_synthetic(simulation, emit, db, redis_client)
+
+
+def get_simulation_provider(mode: str):
+    """Return the provider for the configured simulator mode."""
+    normalized_mode = (mode or "").strip().lower()
+    if normalized_mode == "docker":
+        return DockerSimulationProvider()
+    if normalized_mode == "synthetic":
+        return SyntheticSimulationProvider()
+    raise ValueError("SIMULATOR_MODE must be either 'docker' or 'synthetic'")
+
+
 async def _check_docker_available() -> bool:
     try:
         import docker
@@ -89,15 +118,9 @@ async def run_simulation(
             "details": details or {},
         })
 
-    docker_available = await _check_docker_available()
-
     try:
-        if docker_available:
-            await _run_with_docker(simulation, queue, emit, db, redis_client)
-        else:
-            raise RuntimeError(
-                "Docker is required for simulations so attacks remain inside the isolated sandbox"
-            )
+        provider = get_simulation_provider(settings.SIMULATOR_MODE)
+        await provider.run(simulation, queue, emit, db, redis_client)
 
         threat = await _record_simulation_detection(db, simulation)
         if threat:
@@ -264,38 +287,270 @@ async def _run_with_docker(simulation, queue, emit, db, redis_client):
                 pass
 
 
-async def _run_without_docker(simulation, queue, emit, db, redis_client):
+async def _run_synthetic(simulation, emit, db, redis_client):
+    """Replay the sandbox target's observable behavior without side effects.
+
+    This deliberately models only the fixed target application and attacker
+    scripts shipped with ShieldSphere.  It never opens a socket, starts a
+    process, imports Docker, or executes a user-supplied payload.
     """
-    Run simulation without Docker (for environments where Docker is not available).
-    Uses httpx to hit a locally started Flask target or runs script-level checks.
-    """
-    sim_type = simulation.sim_type
+    from ipaddress import ip_address
+    from urllib.parse import urlparse
+
+    events = []
+    result = {"provider": "synthetic", "events": events}
+
+    async def stage(event_type: str, payload: str, severity: str = "info", details: dict | None = None):
+        event_details = details or {}
+        events.append({"type": event_type, "payload": payload, "details": event_details})
+        await emit(event_type, payload, severity=severity, details=event_details)
+
+    params = simulation.params or {}
     sim_id = str(simulation.id)
+    sim_type = simulation.sim_type
 
-    await emit("info", f"Running {sim_type} simulation (no-Docker mode)", severity="info")
+    await stage(
+        "network_created",
+        f"Synthetic sandbox session initialized: shieldsphere-sim-{sim_id[:8]}",
+        details={"provider": "synthetic", "network": "in-process"},
+    )
+    await stage(
+        "starting_target",
+        "Preparing safe in-process target model...",
+        details={"provider": "synthetic"},
+    )
+    await asyncio.sleep(0.05)
+    await stage(
+        "target_ready",
+        "Synthetic target model ready at sandbox-target:5000",
+        details={"provider": "synthetic", "target": "sandbox-target:5000"},
+    )
 
-    # Import the threat detection service to register real events
-    import redis.asyncio as aioredis
-    from app.services import threat_detection
+    try:
+        if sim_type == "brute_force":
+            attacker_ip = params.get("attacker_ip")
+            attempts = params.get("attempts")
+            if not attacker_ip or not isinstance(attempts, int) or isinstance(attempts, bool) or attempts < 1:
+                raise ValueError("brute_force requires params.attacker_ip and positive params.attempts")
+            try:
+                attacker_ip = str(ip_address(attacker_ip))
+            except ValueError as exc:
+                raise ValueError("brute_force params.attacker_ip must be a valid IP address") from exc
 
-    if sim_type == "brute_force":
-        await _simulate_brute_force_local(emit, db, simulation, redis_client)
-    elif sim_type == "sqli":
-        await _simulate_sqli_local(emit, db, simulation)
-    elif sim_type == "xss":
-        await _simulate_xss_local(emit, db, simulation)
-    elif sim_type == "port_scan":
-        await _simulate_port_scan_local(emit, db, simulation)
-    elif sim_type == "vuln_scan":
-        await _simulate_vuln_scan_local(emit, db, simulation)
-    elif sim_type == "phishing":
-        await _simulate_phishing_local(emit, db, simulation)
-    elif sim_type == "packet_capture":
-        await _simulate_packet_capture_local(emit, db, simulation)
-    elif sim_type == "social_engineering":
-        await _simulate_social_engineering_local(emit, db, simulation)
-    else:
-        await emit("error", f"Unknown simulation type: {sim_type}", severity="high")
+            await stage("start", f"Beginning brute force simulation: {attempts} attempts", severity="warning")
+            for index in range(attempts):
+                # This persists a simulated LoginHistory row and invokes the
+                # same Redis sliding-window detector as the Docker provider.
+                await _record_brute_force_event(db, simulation, redis_client, stage)
+                await stage(
+                    "login_attempt",
+                    f"Attempt {index + 1}/{attempts}",
+                    severity="warning",
+                    details={
+                        "status_code": 401,
+                        "attempt": index + 1,
+                        "ip": attacker_ip,
+                        "success": False,
+                        "response": {"success": False, "message": "Invalid credentials"},
+                    },
+                )
+                await asyncio.sleep(0.08)
+            result["attempts"] = attempts
+            result["attacker_ip"] = attacker_ip
+            await stage("complete", "Brute force simulation complete")
+
+        elif sim_type == "sqli":
+            payloads = params.get("payloads")
+            if not isinstance(payloads, list) or not payloads:
+                raise ValueError("sqli requires non-empty params.payloads")
+            await stage("start", "Beginning SQL injection simulation against synthetic target", severity="warning")
+            outcomes = []
+            for payload in payloads:
+                value = str(payload)
+                normalized = value.lower()
+                if "union select" in normalized:
+                    status_code, response = 500, {"error": "synthetic SQL syntax error"}
+                elif "' or '1'='1'" in normalized:
+                    status_code, response = 200, {"success": True, "role": "sandbox_admin"}
+                else:
+                    status_code, response = 401, {"success": False, "message": "Invalid credentials"}
+                details = {"status_code": status_code, "response": response, "synthetic": True}
+                outcomes.append({"payload": value, **details})
+                await stage("sqli_payload", value, details=details)
+                await asyncio.sleep(0.1)
+            result["outcomes"] = outcomes
+            await stage("complete", "SQL injection simulation complete")
+
+        elif sim_type == "xss":
+            payloads = params.get("payloads")
+            if not isinstance(payloads, list) or not payloads:
+                raise ValueError("xss requires non-empty params.payloads")
+            await stage("start", "Beginning XSS simulation against synthetic target", severity="warning")
+            outcomes = []
+            for payload in payloads:
+                value = str(payload)
+                details = {"status_code": 200, "reflected": True, "synthetic": True}
+                outcomes.append({"payload": value, **details})
+                await stage("xss_payload", value, details=details)
+                await asyncio.sleep(0.1)
+            result["outcomes"] = outcomes
+            await stage("complete", "XSS simulation complete")
+
+        elif sim_type == "port_scan":
+            target = params.get("target")
+            if not target:
+                raise ValueError("port_scan requires params.target")
+            ports = str(params.get("ports", "1-1024"))
+            await stage("start", f"Starting port scan against {target}", severity="warning")
+            await stage("scanning", f"Modeling nmap scan on {target}...", details={"ports": ports})
+            open_ports = []
+            if _synthetic_port_requested(ports, 5000):
+                open_ports.append({"port": 5000, "protocol": "tcp", "service": "http", "version": "Flask"})
+            nmap_result = {
+                "synthetic-target": {
+                    "tcp": {str(item["port"]): {"state": "open", "name": item["service"]} for item in open_ports}
+                }
+            } if open_ports else {}
+            result["open_ports"] = open_ports
+            result["scan"] = nmap_result
+            await stage("port_scan", "nmap scan completed", details={"result": nmap_result, "synthetic": True})
+            await stage("complete", "Port scan simulation complete")
+
+        elif sim_type == "vuln_scan":
+            checks = {
+                "https": False,
+                "hsts": False,
+                "csp": False,
+                "x_frame_options": False,
+                "x_content_type_options": False,
+            }
+            risk_score = 75
+            await stage("start", "Starting vulnerability scan of synthetic target")
+            await stage(
+                "vulnerability_headers",
+                "Sandbox target headers inspected",
+                details={"status_code": 200, "checks": checks, "server": "Werkzeug", "synthetic": True},
+            )
+            result["findings"] = checks
+            result["risk_score"] = risk_score
+            await stage("result", f"Vulnerability scan complete. Risk score: {risk_score}/100")
+            await stage("complete", "Vulnerability scan complete")
+
+        elif sim_type == "phishing":
+            supplied = params.get("urls")
+            legitimate_domains = params.get("legitimate_domains")
+            if not isinstance(supplied, list) or not supplied:
+                raise ValueError("phishing simulation requires params.urls with at least one URL")
+            if not isinstance(legitimate_domains, list) or not legitimate_domains:
+                raise ValueError("phishing simulation requires params.legitimate_domains")
+            await stage("start", "Beginning phishing URL analysis simulation", severity="warning")
+            challenge_items = []
+            for index, item in enumerate(supplied, start=1):
+                url = item if isinstance(item, str) else item.get("url") if isinstance(item, dict) else None
+                description = "user supplied URL" if isinstance(item, str) else str(item.get("description", "user supplied URL")) if isinstance(item, dict) else ""
+                if not url:
+                    raise ValueError("params.urls must contain URL strings or objects with a url field")
+                domain = urlparse(url).netloc.lower()
+                min_dist = min(_levenshtein_distance(domain, str(legitimate).lower()) for legitimate in legitimate_domains)
+                is_suspicious = 0 < min_dist <= 3
+                challenge = {
+                    "id": f"url_{index}", "url": url, "description": description, "domain": domain,
+                    "expected": "phishing" if is_suspicious else "legitimate", "levenshtein_distance": min_dist,
+                }
+                challenge_items.append(challenge)
+                await stage(
+                    "phishing_prompt",
+                    f"Classify {description}: {domain}",
+                    severity="warning",
+                    details={"challenge_id": challenge["id"], "url": url, "domain": domain, "reachable": False, "synthetic": True},
+                )
+                await asyncio.sleep(0.1)
+            result["challenge_items"] = challenge_items
+            result["responses"] = []
+            await stage("complete", "Phishing simulation complete")
+
+        elif sim_type == "packet_capture":
+            duration = params.get("duration_seconds")
+            if not isinstance(duration, (int, float)) or isinstance(duration, bool) or not 1 <= duration <= 60:
+                raise ValueError("packet_capture requires duration_seconds between 1 and 60")
+            await stage("start", f"Capturing synthetic sandbox traffic for {duration}s")
+            packets = [
+                {"type": "TCP", "src": "198.18.0.10", "dst": "198.18.0.20", "port": 5000, "flags": "S", "length": 60, "info": "TCP SYN"},
+                {"type": "TCP", "src": "198.18.0.20", "dst": "198.18.0.10", "port": 5000, "flags": "SA", "length": 60, "info": "TCP SYN-ACK"},
+                {"type": "HTTP", "src": "198.18.0.10", "dst": "198.18.0.20", "port": 5000, "flags": "PA", "length": 128, "info": "GET / HTTP/1.1"},
+            ]
+            for packet in packets:
+                await stage("packet_captured", packet["info"], details={**packet, "synthetic": True})
+                await asyncio.sleep(0.08)
+            result["packet_count"] = len(packets)
+            result["packets"] = packets
+            await stage("packet_capture_complete", f"Captured {len(packets)} sandbox packets", details={"packet_count": len(packets), "synthetic": True})
+            await stage("complete", "Packet capture analysis complete")
+
+        elif sim_type == "social_engineering":
+            role = str(params.get("user_role", "employee"))
+            scenario = _synthetic_social_engineering_scenario(role)
+            await stage("start", "Generating social engineering awareness scenario...")
+            result["scenario"] = scenario
+            result["responses"] = []
+            await stage("scenario_generated", f"Scenario: {scenario['title']}", severity="warning", details=scenario)
+            await stage("attacker_message", f"Attack Message: {scenario['attacker_message']}", severity="high")
+            await stage("red_flags", f"Red Flags: {', '.join(scenario['red_flags'])}")
+            await stage("complete", "Social engineering scenario ready")
+
+        else:
+            raise ValueError(f"Unsupported simulation type: {sim_type}")
+    finally:
+        await stage("cleanup", "Tearing down synthetic sandbox session...", details={"provider": "synthetic"})
+        simulation.raw_output = result
+        await db.commit()
+
+
+def _synthetic_port_requested(ports: str, requested_port: int) -> bool:
+    """Determine whether an nmap-style port expression includes one safe model port."""
+    for part in ports.split(","):
+        value = part.strip()
+        if not value:
+            continue
+        try:
+            if "-" in value:
+                start, end = (int(item) for item in value.split("-", 1))
+                if start <= requested_port <= end:
+                    return True
+            elif int(value) == requested_port:
+                return True
+        except ValueError:
+            continue
+    return False
+
+
+def _synthetic_social_engineering_scenario(role: str) -> dict:
+    """Return a stable awareness scenario using the schema expected by the UI."""
+    return {
+        "title": "Urgent account-verification request",
+        "scenario": (
+            f"As a {role}, you receive an urgent message asking you to verify your account "
+            "through an unfamiliar sign-in link. What is the safest response?"
+        ),
+        "attacker_message": "Your account will be suspended today. Verify your password immediately at the linked portal.",
+        "red_flags": ["Urgent deadline", "Unfamiliar sign-in link", "Password request"],
+        "options": [
+            {"id": "A", "label": "Open the link and enter credentials", "is_correct": False, "explanation": "Credentials should never be entered through an unverified link."},
+            {"id": "B", "label": "Report it and open the known service directly", "is_correct": True, "explanation": "Use a trusted route and report the suspicious message."},
+            {"id": "C", "label": "Forward it to colleagues", "is_correct": False, "explanation": "Forwarding can spread a malicious message."},
+        ],
+    }
+
+
+async def _run_without_docker(simulation, queue, emit, db, redis_client):
+    """Backward-compatible alias for the safe synthetic provider.
+
+    Older internal callers used this helper for a host-local fallback.  Keeping
+    that behavior would violate the synthetic-mode safety contract because the
+    historical implementation could issue HTTP requests, run Nmap, or sniff a
+    host interface.  All no-Docker calls now use the in-process replay.
+    """
+    await _run_synthetic(simulation, emit, db, redis_client)
 
 
 async def _simulate_brute_force_local(emit, db, simulation, redis_client):
@@ -885,20 +1140,10 @@ async def _run_attacker_container(client, network_name, target_name, simulation,
 
 
 async def _execute_attack(sim_type, target_ip, emit, db, simulation, redis_client, sim_id):
-    """Execute the appropriate attack type against the Docker target."""
-    if sim_type == "brute_force":
-        await _simulate_brute_force_local(emit, db, simulation, redis_client)
-    elif sim_type == "sqli":
-        simulation.params = simulation.params or {}
-        simulation.params["target_url"] = f"http://{target_ip}:5000"
-        await _simulate_sqli_local(emit, db, simulation)
-    elif sim_type == "xss":
-        simulation.params = simulation.params or {}
-        simulation.params["target_url"] = f"http://{target_ip}:5000"
-        await _simulate_xss_local(emit, db, simulation)
-    elif sim_type == "port_scan":
-        simulation.params = simulation.params or {}
-        simulation.params["target"] = target_ip
-        await _simulate_port_scan_local(emit, db, simulation)
-    else:
-        await _run_without_docker(simulation, None, emit, db, redis_client)
+    """Legacy internal entrypoint retained for callers outside this module.
+
+    Docker execution is owned by ``DockerSimulationProvider``.  This helper is
+    therefore a safe replay rather than an alternate path that could target the
+    host network.
+    """
+    await _run_synthetic(simulation, emit, db, redis_client)
