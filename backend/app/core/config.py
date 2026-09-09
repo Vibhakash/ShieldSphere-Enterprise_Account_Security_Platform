@@ -191,7 +191,7 @@ class Settings(BaseSettings):
     BRUTE_FORCE_WINDOW_SECONDS: int = 300   # 5 minutes
     IMPOSSIBLE_TRAVEL_MIN_SPEED_KMH: float = 900.0  # faster than commercial flight
     AUTO_BLOCK_THREAT_COUNT: int = 3        # threats before auto-block
-    MAX_SIMULATOR_RUNS_PER_HOUR: int = 5
+    MAX_SIMULATOR_RUNS_PER_HOUR: int = 1500
 
     # Security score weights
     SCORE_2FA_ENABLED: int = 25

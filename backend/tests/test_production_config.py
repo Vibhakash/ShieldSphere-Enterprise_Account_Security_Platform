@@ -37,6 +37,10 @@ def test_valid_production_settings_are_accepted():
     assert production.COOKIE_SECURE is True
 
 
+def test_simulator_run_limit_defaults_to_1500_per_hour():
+    assert _production_settings().MAX_SIMULATOR_RUNS_PER_HOUR == 1500
+
+
 @pytest.mark.parametrize(
     ("field", "value"),
     [
